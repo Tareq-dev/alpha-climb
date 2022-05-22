@@ -44,7 +44,7 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          navigate("/payment");
+          navigate(`/payment/${id}`);
         }
       });
 

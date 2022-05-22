@@ -30,7 +30,7 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/products/:id" element={<Purchase />}></Route>
         <Route
-          path="/payment"
+          path="/payment/:id"
           element={
             <RequireAuth>
               <Payment />

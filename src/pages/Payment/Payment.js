@@ -1,59 +1,68 @@
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
+import { useQuery } from "react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import Loading from "../../components/Loading";
+import CheckoutForm from "./CheckoutForm";
 
+const stripePromise = loadStripe(
+  "pk_test_51L2G4sBmhlq91OcmM28zWFxrGlcdSXj1zS8BeHVC6Wmb7hnNORKQ7MhJyVY6nDQCua0L1bhsFX3w2xB6lnp1iTGe00CFqEoh15"
+);
 const Payment = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const url = `http://localhost:5000/products/${id}`;
+  const { data: order, isLoading } = useQuery("orders", () =>
+    fetch(url).then((res) => res.json())
+  );
+  const backBtn = () => {
+    navigate(`/products/${id}`);
+  };
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="py-14 mx-auto w-3/4">
-      <div class="card lg:card-side bg-base-100 shadow-lg h-96">
+      <div class="card lg:card-side shadow-lg">
         <div className="md:w-48 flex justify-center items-center bg-black text-white py-8">
           <div>
-            <div className="bg-primary p-2 mb-2">
+            <div className="bg-primary p-2 mb-2 rounded-lg">
               <h2 className="text-md text-center">Order Number</h2>
-              <p className="text-center">12345</p>
+              <p className="text-center">{id.slice(0, 5) + "33"}</p>
             </div>
-            <div className="bg-primary p-2 mb-2">
+            <div className="bg-primary p-2 mb-2 rounded-lg">
               <h2 className="text-md text-center">Price</h2>
               <p className="text-center">$ 345</p>
             </div>
             <div className="flex justify-center">
               <button className="btn btn-sm">
-              <img className="w-8" src="https://i.ibb.co/44CnMXN/Pngtree-purple-left-arrow-2090709.png" alt="" />
-              Back</button>
+                <img
+                  className="w-8"
+                  src="https://i.ibb.co/44CnMXN/Pngtree-purple-left-arrow-2090709.png"
+                  alt=""
+                  onClick={backBtn}
+                />
+                Back
+              </button>
             </div>
           </div>
         </div>
-        <div class="h-96 w-full p-5 bg-blue-300">
-         <div className='flex justify-between'>
-         <h2 class="card-title uppercase mb-1">Master Card</h2>
-         <img className='w-20' src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png" alt="" />
-         </div>
+        <div class="h-full w-full p-5 bg-blue-300">
+          <div className="flex justify-between">
+
+            <h2 class="card-title uppercase mb-1">Enter Card Info</h2>
+            <img
+              className="w-20"
+              src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png"
+              alt=""
+            />
+          </div>
           <hr />
-          <form className="mt-2">
-            <div className="w-full">
-              <input
-                type="text"
-                placeholder="Input Your Name Here"
-                class="input input-bordered border-black w-full max-w-xs"
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Input Your Name Card Number"
-                class="input input-bordered border-black w-full max-w-xs mt-2"
-              />
-              <input
-                type="text"
-                placeholder="Expiration"
-                class="input input-bordered border-black w-full max-w-xs mt-2"
-              />
-              <input
-                type="text"
-                placeholder="CVV"
-                class="input input-bordered border-black w-full max-w-xs mt-2 mb-2"
-              />
-              <hr />
-            </div>
-            <button className="btn btn-sm mt-4">Proceed CheckOut <img className="w-8 mx-2" src="https://i.ibb.co/Br4dzDm/arrow-next-2825.png" alt="" /></button>
-          </form>
+          <h2 className="text-2xl text-center py-2">Pay for {order.name}</h2>
+          <Elements stripe={stripePromise}>
+          <CheckoutForm order={order} />
+      </Elements>
         </div>
       </div>
     </div>
