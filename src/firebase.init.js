@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDMqw42cWAdQ5fxnMUqcxLtpxOfKBHsYKs",
-  authDomain: "dentist-portal-e9830.firebaseapp.com",
-  projectId: "dentist-portal-e9830",
-  storageBucket: "dentist-portal-e9830.appspot.com",
-  messagingSenderId: "706981552671",
-  appId: "1:706981552671:web:628ecc1e707d360029eb2a",
+  apiKey: "AIzaSyCBAv64zFOeWlwYi6-Roe7Vi_HToLpu9Ao",
+  authDomain: "alpha-climb0.firebaseapp.com",
+  projectId: "alpha-climb0",
+  storageBucket: "alpha-climb0.appspot.com",
+  messagingSenderId: "213242817201",
+  appId: "1:213242817201:web:a7540baa454e63a72e5090",
 };
 
 // Initialize Firebase

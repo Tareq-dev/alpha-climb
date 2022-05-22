@@ -10,7 +10,6 @@ const Product = ({ product }) => {
     _id,
     name,
     description,
-    img,
     price,
     minimumQuantity,
     availableQuantity,
