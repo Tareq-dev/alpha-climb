@@ -144,7 +144,7 @@ const Footer = () => {
           <p className="text-gray-500 text-sm text-center sm:text-left">
             © 2022 alpha climb —
             <a
-              href="https://twitter.com/knyttneve"
+              href="https://twitter.com/tarequl"
               rel="noopener noreferrer"
               className="text-white ml-1"
               target="_blank"

@@ -1,23 +1,34 @@
 import React from "react";
 
-const Product = () => {
+const Product = ({ product }) => {
+  const {
+    _id,
+    name,
+    description,
+    img,
+    price,
+    minimumQuantity,
+    availableQuantity,
+  } = product;
   return (
-    <div class="card bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl">
       <figure>
         <img
           src="https://api.lorem.space/image/shoes?w=400&h=225"
           alt="Shoes"
         />
       </figure>
-      <div class="card-body">
-        <h2 class="card-title">
-          Shoes!
-          <div class="badge badge-secondary">NEW</div>
+      <div className="card-body p-3">
+        <h2 className="card-title">
+          {name}
         </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-          <div class="badge badge-outline">Fashion</div>
-          <div class="badge badge-outline">Products</div>
+        <p>{description.slice(0, 30) + "...."}</p>
+        <p className="bg-sky-100 py-1 px-2 rounded-xl font-bold">Price : ${price}</p>
+        <span className="bg-sky-100 py-1 px-2 rounded-xl">Available: {availableQuantity} Pcs</span>
+        <span className="bg-sky-100 py-1 px-2 rounded-xl">Minimum Order: {minimumQuantity} Pcs</span>
+        
+        <div className="card-actions justify-center">
+          <button className="btn btn-sm btn-outline mt-2">Purchase</button>
         </div>
       </div>
     </div>

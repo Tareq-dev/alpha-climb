@@ -1,164 +1,119 @@
 [
   {
-    "id": "62893372905cca01c036a2a5",
-    "name": "Clements Anderson",
+    "name": "Lynnette Hardy",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 248,
+    "description": "Veniam in incididunt exercitation aute quis consectetur. Dolor sunt laboris eiusmod commodo eiusmod ex. Occaecat sint sint esse dolor nostrud sint elit ullamco Lorem cillum. In ut aliqua minim ex do. Laborum officia duis ea ipsum in labore tempor occaecat ea incididunt.\r\n",
+    "minimumQuantity": 184,
+    "availableQuantity": 682,
+    "email": "lynnettehardy@opticall.com"
   },
   {
-    "id": "628933723b03cede83620f8d",
-    "name": "Stewart Stevenson",
+    "name": "Church Harris",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 184,
+    "description": "Consequat velit deserunt elit magna esse enim amet veniam do exercitation. Voluptate fugiat nostrud sint eiusmod sunt eu eiusmod amet. Eiusmod dolore aliqua voluptate cupidatat esse.\r\n",
+    "minimumQuantity": 68,
+    "availableQuantity": 261,
+    "email": "churchharris@opticall.com"
   },
   {
-    "id": "628933725e17a02a4d2ed9c5",
-    "name": "Marie Trujillo",
+    "name": "Vazquez Ratliff",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 118,
+    "description": "Adipisicing ullamco amet velit ea dolor occaecat. Minim ex ut ipsum laboris pariatur. Consectetur labore consequat reprehenderit minim tempor ullamco minim deserunt voluptate aute culpa ullamco. Fugiat laboris laborum ut labore elit. Dolor cillum cillum adipisicing Lorem nisi eu do quis sunt. Sunt aliquip esse pariatur id consequat labore fugiat velit adipisicing dolore ut et pariatur ut.\r\n",
+    "minimumQuantity": 174,
+    "availableQuantity": 986,
+    "email": "vazquezratliff@opticall.com"
   },
   {
-    "id": "62893372c08bd7be12ca10a0",
-    "name": "Ford Cortez",
+    "name": "Kristine Byrd",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 73,
+    "description": "Ullamco quis occaecat anim ex commodo. Incididunt cillum dolore laboris amet anim pariatur ex et deserunt nostrud qui. Adipisicing consectetur sunt elit tempor mollit incididunt sint deserunt.\r\n",
+    "minimumQuantity": 229,
+    "availableQuantity": 1185,
+    "email": "kristinebyrd@opticall.com"
   },
   {
-    "id": "628933726948cd1cd92f6982",
-    "name": "Slater Adams",
+    "name": "Jewell Stevens",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 233,
+    "description": "Tempor magna magna sunt veniam incididunt tempor. Sit nisi deserunt fugiat qui. Officia quis non incididunt proident aute amet non nisi labore tempor nisi irure reprehenderit. Tempor non eiusmod eu sunt nisi irure in ullamco anim mollit minim. Eiusmod dolor nisi reprehenderit excepteur laboris duis incididunt et eiusmod cillum. Elit labore quis officia magna anim.\r\n",
+    "minimumQuantity": 112,
+    "availableQuantity": 397,
+    "email": "jewellstevens@opticall.com"
   },
   {
-    "id": "628933721a160b0e3a19b88e",
-    "name": "Love Hart",
+    "name": "Key Francis",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 112,
+    "description": "Elit qui Lorem consectetur laboris id cupidatat ipsum cupidatat exercitation. Exercitation sit sunt exercitation eu adipisicing labore ipsum labore pariatur voluptate magna amet ullamco consectetur. Aliquip commodo velit reprehenderit elit in nisi id labore in occaecat. Ut amet duis do sit. Cillum voluptate anim pariatur labore Lorem magna aute dolor officia. In aliquip Lorem pariatur cupidatat proident. Esse id incididunt exercitation esse proident aute aute elit ad consequat amet anim.\r\n",
+    "minimumQuantity": 112,
+    "availableQuantity": 828,
+    "email": "keyfrancis@opticall.com"
   },
   {
-    "id": "6289337210583de5244c6794",
-    "name": "Lambert Goodwin",
+    "name": "Howell Edwards",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 76,
+    "description": "Anim consectetur est ipsum occaecat voluptate minim qui incididunt nostrud culpa. Pariatur Lorem adipisicing id pariatur exercitation occaecat sunt adipisicing. Occaecat aliquip nulla Lorem qui id consequat sit ut anim. Do amet velit exercitation voluptate enim aliquip sint ut. Sit esse proident eu ullamco pariatur aliqua velit Lorem labore.\r\n",
+    "minimumQuantity": 57,
+    "availableQuantity": 595,
+    "email": "howelledwards@opticall.com"
   },
   {
-    "id": "628933725cfba7415b23fec0",
-    "name": "Johnston Garrison",
+    "name": "Myrtle Pittman",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 139,
+    "description": "Esse excepteur laboris reprehenderit elit quis ullamco enim nisi commodo cupidatat. Reprehenderit magna Lorem enim excepteur fugiat mollit. Veniam ea velit aliquip ullamco do mollit est dolor nulla in deserunt nisi nulla exercitation. Laboris pariatur officia tempor ullamco. Occaecat reprehenderit ex nisi mollit et. Et aliqua do aute aute ipsum veniam tempor dolore ad et veniam.\r\n",
+    "minimumQuantity": 132,
+    "availableQuantity": 1086,
+    "email": "myrtlepittman@opticall.com"
   },
   {
-    "id": "628933728978de9549ecc782",
-    "name": "Sandoval Tucker",
+    "name": "Lee Justice",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 218,
+    "description": "Veniam elit non eu nulla laborum id do proident ipsum dolor pariatur eiusmod magna. Velit nulla magna ea sint fugiat eu reprehenderit aliqua eiusmod. Duis et consectetur exercitation ullamco duis qui commodo nisi occaecat. Adipisicing eiusmod enim fugiat consequat qui dolore fugiat esse proident officia exercitation elit. Est quis mollit consequat aliqua aliqua ex consectetur laboris laborum elit ipsum id aute ullamco. Aute aute quis aliqua nisi anim nostrud nulla sint Lorem eu mollit fugiat magna ex. Quis tempor sint ipsum aute nostrud in dolor deserunt occaecat pariatur occaecat dolore veniam.\r\n",
+    "minimumQuantity": 110,
+    "availableQuantity": 914,
+    "email": "leejustice@opticall.com"
   },
   {
-    "id": "628933721b1009f379518e4c",
-    "name": "Lawanda Farley",
+    "name": "Janice Burt",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 104,
+    "description": "Consectetur qui occaecat Lorem voluptate Lorem. Proident laboris enim adipisicing nisi pariatur ea elit dolore mollit. Nulla anim consequat Lorem veniam nisi minim.\r\n",
+    "minimumQuantity": 125,
+    "availableQuantity": 402,
+    "email": "janiceburt@opticall.com"
   },
   {
-    "id": "62893372d34a36da6dd5a991",
-    "name": "Regina Rivas",
+    "name": "Pittman Warner",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 167,
+    "description": "Deserunt voluptate quis elit adipisicing aliquip ut anim do et ad sit eiusmod. Est veniam labore veniam culpa et nisi incididunt voluptate duis culpa sit laboris ullamco ex. Sit ea nisi exercitation mollit cillum commodo consequat amet ea aliqua pariatur laborum veniam incididunt. Duis aliquip quis esse incididunt et amet minim excepteur esse officia officia ullamco sint.\r\n",
+    "minimumQuantity": 64,
+    "availableQuantity": 178,
+    "email": "pittmanwarner@opticall.com"
   },
   {
-    "id": "628933729177078bdee4601b",
-    "name": "Jefferson Velazquez",
+    "name": "Jacquelyn Clayton",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 92,
+    "description": "Consectetur velit minim Lorem excepteur proident ex est mollit tempor velit sit incididunt proident consequat. Sint magna sint consequat occaecat incididunt. Adipisicing veniam consectetur sunt amet sit qui. Velit excepteur minim tempor non non qui sit reprehenderit consectetur ut pariatur.\r\n",
+    "minimumQuantity": 179,
+    "availableQuantity": 284,
+    "email": "jacquelynclayton@opticall.com"
   },
   {
-    "id": "628933725ec2a78e2cd6ebd9",
-    "name": "Cantu Heath",
+    "name": "Lorene Spencer",
     "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
-  },
-  {
-    "id": "62893372af877b900cb6cd33",
-    "name": "Tricia Holloway",
-    "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
-  },
-  {
-    "id": "62893372f6c3c2075a177462",
-    "name": "Justine Guerra",
-    "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
-  },
-  {
-    "id": "62893372bd88ae5deb90b7e8",
-    "name": "Ashley Hensley",
-    "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
-  },
-  {
-    "id": "628933722a8b0d8084cfcfe0",
-    "name": "Mccall Gilmore",
-    "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
-  },
-  {
-    "id": "62893372a9d38fa7c28c4557",
-    "name": "Kathie Watkins",
-    "img": "http://placehold.it/32x32",
-    "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-    "price": 300,
-    "minimum": 20,
-    "quantity": 20
+    "price": 240,
+    "description": "Do aliquip veniam pariatur non commodo ea fugiat nostrud voluptate dolor. Dolore voluptate pariatur proident tempor. Tempor ad sunt excepteur cillum tempor enim amet culpa culpa magna laboris tempor aliquip. Irure laborum reprehenderit reprehenderit ut laboris eu. Reprehenderit culpa consequat irure eu in eiusmod et Lorem. Proident aute in laborum incididunt id ut eiusmod consequat eu nulla irure consequat duis. Aliquip deserunt tempor culpa commodo ea laboris.\r\n",
+    "minimumQuantity": 205,
+    "availableQuantity": 1205,
+    "email": "lorenespencer@opticall.com"
   }
 ]
