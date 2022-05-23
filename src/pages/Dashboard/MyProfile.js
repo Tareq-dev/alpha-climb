@@ -58,7 +58,7 @@ const MyProfile = () => {
   return (
     <div>
       <div className="mx-10 py-8">
-        <div className="flex items-center w-full">
+        <div className="flex items-center w-full mb-3">
           <div class="avatar online">
             <div class="w-24 rounded-full shadow-2xl">
               <img src={img || user.photoURL} alt={user.displayName} />
@@ -71,7 +71,6 @@ const MyProfile = () => {
             <p className="text-sm text-gray-400 mt-1">{user?.email}</p>
           </div>
         </div>
-        <div className="py-5">
           <div className="mt-4 flex flex-row">
             <a target="_blank" rel="noreferrer" href={facebook}>
               <FaFacebook size="25" className="text-blue-600 mx-5" />
@@ -80,7 +79,6 @@ const MyProfile = () => {
               <FaLinkedinIn size="25" className="text-blue-600" />
             </a>
           </div>
-        </div>
       </div>
       <div className="mx-10">
         <h2 className="text-xl">Update profile information ?</h2>

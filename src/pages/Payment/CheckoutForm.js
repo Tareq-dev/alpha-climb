@@ -13,19 +13,21 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, name, email } = order;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ price }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.clientSecret) {
-          setClientSecret(data.clientSecret);
-        }
-      });
+    if (price) {
+      fetch("http://localhost:5000/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.clientSecret) {
+            setClientSecret(data.clientSecret);
+          }
+        });
+    }
   }, [price]);
   const handlePaymentSubmit = async (event) => {
     event.preventDefault();
@@ -93,8 +95,8 @@ const CheckoutForm = ({ order }) => {
   return (
     <div>
       <form
-        className="bg-sky-100 py-4 px-4 rounded-xl"
         onSubmit={handlePaymentSubmit}
+        className="bg-sky-100 py-4 px-4 rounded-xl"
       >
         <CardElement
           options={{
@@ -120,6 +122,7 @@ const CheckoutForm = ({ order }) => {
           Pay
         </button>
       </form>
+
       {paymentSuccess && (
         <div className="text-green-700">
           <p>

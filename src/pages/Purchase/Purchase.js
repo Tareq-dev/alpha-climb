@@ -14,12 +14,13 @@ const Purchase = () => {
     event.preventDefault();
     const userEmail = user.email;
     const imgURL = product.img;
+    const price = product.price;
+    const orderQuantity = parseInt(event.target.order.value);
+    const totalPrice = price * orderQuantity;
     const shopName = event.target.shop.value;
     const address = event.target.address.value;
     const phone = event.target.phone.value;
     const availableQuantity = product.availableQuantity;
-    const orderQuantity = parseInt(event.target.order.value);
-
     if (availableQuantity < orderQuantity) {
       return toast.error("Sorry!! You can not order more then stock");
     }
@@ -27,8 +28,10 @@ const Purchase = () => {
       return toast.error("Sorry!! minimum order 50");
     }
     const placeOrder = {
+      productId:id,
       email: userEmail,
       shopName,
+      price:totalPrice,
       img: imgURL,
       address,
       phone,
