@@ -10,6 +10,14 @@ import Login from "./pages/Login/Login";
 import RequireAuth from "./pages/Login/RequireAuth";
 import Register from "./pages/Login/Register";
 import Payment from "./pages/Payment/Payment";
+import MyReview from './pages/Dashboard/MyReview';
+import Dashboard from "./pages/Dashboard/Dashboard";
+import MyOrder from './pages/Dashboard/MyOrder';
+import AllUser from './pages/Dashboard/AllUser';
+import ManageProducts from './pages/Dashboard/ManageProducts';
+import ManageOrder from './pages/Dashboard/ManageOrder';
+import AddProducts from './pages/Dashboard/AddProducts';
+import MyProfile from './pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -37,6 +45,16 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}
+        >
+          <Route index element={<MyProfile />}></Route>
+          <Route path="my-order" element={<MyOrder />}></Route>
+          <Route path="my-review" element={<MyReview />}></Route>
+          <Route path="manage-products" element={<ManageProducts />}></Route>
+          <Route path="add-product" element={<AddProducts />}></Route>
+          <Route path="manage-orders" element={<ManageOrder />}></Route>
+          <Route path="users" element={<AllUser />}></Route>
+        </Route>
       </Routes>
       <ToastContainer />
     </div>

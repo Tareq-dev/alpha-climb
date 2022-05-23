@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import CheckoutForm from "./CheckoutForm";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 const stripePromise = loadStripe(
   "pk_test_51L2G4sBmhlq91OcmM28zWFxrGlcdSXj1zS8BeHVC6Wmb7hnNORKQ7MhJyVY6nDQCua0L1bhsFX3w2xB6lnp1iTGe00CFqEoh15"
@@ -27,6 +28,9 @@ const Payment = () => {
       <div class="card lg:card-side shadow-lg">
         <div className="md:w-48 flex justify-center items-center bg-black text-white py-8">
           <div>
+            <div onClick={backBtn} className="flex justify-center mb-5">
+                <FaArrowAltCircleLeft size="33" />
+            </div>
             <div className="bg-primary p-2 mb-2 rounded-lg">
               <h2 className="text-md text-center">Order Number</h2>
               <p className="text-center">{id.slice(0, 5) + "33"}</p>
@@ -35,22 +39,10 @@ const Payment = () => {
               <h2 className="text-md text-center">Price</h2>
               <p className="text-center">$ 345</p>
             </div>
-            <div className="flex justify-center">
-              <button className="btn btn-sm">
-                <img
-                  className="w-8"
-                  src="https://i.ibb.co/44CnMXN/Pngtree-purple-left-arrow-2090709.png"
-                  alt=""
-                  onClick={backBtn}
-                />
-                Back
-              </button>
-            </div>
           </div>
         </div>
         <div class="h-full w-full p-5 bg-blue-300">
           <div className="flex justify-between">
-
             <h2 class="card-title uppercase mb-1">Enter Card Info</h2>
             <img
               className="w-20"
@@ -59,10 +51,10 @@ const Payment = () => {
             />
           </div>
           <hr />
-          <h2 className="text-2xl text-center py-2">Pay for {order.name}</h2>
+          <h2 className="text-2xl text-center py-5">Pay for {order.name}</h2>
           <Elements stripe={stripePromise}>
-          <CheckoutForm order={order} />
-      </Elements>
+            <CheckoutForm order={order} />
+          </Elements>
         </div>
       </div>
     </div>

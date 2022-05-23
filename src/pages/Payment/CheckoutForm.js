@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 // import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
@@ -53,12 +54,23 @@ const CheckoutForm = ({ order }) => {
           },
         },
       });
-    if (intentError) {
+    if (intentError || paymentError) {
+      Swal.fire({
+        icon: "error",
+        title: "sorry...",
+        text: intentError?.message,
+      });
       setPaymentError(intentError?.message);
     } else {
       setPaymentError("");
       setPaymentSuccess("Successfully Payment!!!");
       setTransactionId(paymentIntent.id);
+
+      Swal.fire({
+        icon: "success",
+        title: "Successfully payment!!",
+      });
+
       // Path Payment
       //store payment on database
       const payment = {
@@ -77,6 +89,7 @@ const CheckoutForm = ({ order }) => {
         .then((data) => {});
     }
   };
+
   return (
     <div>
       <form
@@ -107,13 +120,11 @@ const CheckoutForm = ({ order }) => {
           Pay
         </button>
       </form>
-      {paymentError && <p className="text-red-500">{paymentError}</p>}
       {paymentSuccess && (
         <div className="text-green-700">
-          <p>{paymentSuccess} </p>
           <p>
             Your transaction ID :
-            <span className="text-purple-500 font-bold"> {transactionId}</span>{" "}
+            <span className="text-xl py-1 font-bold"> {transactionId}</span>{" "}
           </p>
         </div>
       )}

@@ -62,14 +62,19 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-          <li className="px-5">
+          <li>
             <NavLink className="h-8 mt-2" to="/products">
               Products
             </NavLink>
           </li>
-          <li className="px-5">
+          <li>
             <NavLink className="h-8 mt-2" to="/blog">
               Blog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="h-8 mt-2" to="/dashboard">
+              Dashboard
             </NavLink>
           </li>
           {user?.email ? (
