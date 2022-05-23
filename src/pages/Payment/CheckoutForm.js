@@ -1,8 +1,10 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 // import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-const CheckoutForm = ({ order }) => {
+const CheckoutForm = ({ o }) => {
+  const { id } = useParams();
   const stripe = useStripe();
   const elements = useElements();
   const [paymentError, setPaymentError] = useState("");
@@ -10,8 +12,7 @@ const CheckoutForm = ({ order }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
 
-  const { _id, price, name, email } = order;
-
+  const { price, name, email } = o;
   useEffect(() => {
     if (price) {
       fetch("http://localhost:5000/create-payment-intent", {
@@ -73,13 +74,11 @@ const CheckoutForm = ({ order }) => {
         title: "Successfully payment!!",
       });
 
-      // Path Payment
-      //store payment on database
       const payment = {
-        paymentId: _id,
+        paymentId: id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/products/${_id}`, {
+      fetch(`http://localhost:5000/products/${id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

@@ -9,7 +9,7 @@ import { faStar, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  const [loading] = useAuthState(auth);
+  const [user,loading] = useAuthState(auth);
 
   if (loading) {
     return <Loading />;

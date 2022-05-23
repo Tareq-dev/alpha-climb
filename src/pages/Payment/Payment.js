@@ -24,46 +24,54 @@ const Payment = () => {
         setOrder(data);
       });
   }, [email]);
+
+  //Back to previous page
+
   const backBtn = () => {
     navigate(`/products/${id}`);
   };
   return (
-    <div className="py-14 mx-auto w-3/4">
-      <div class="card lg:card-side shadow-lg">
-        <div className="md:w-48 flex justify-center items-center bg-black text-white py-8">
-          <div>
-            <div onClick={backBtn} className="flex justify-center mb-5">
-              <FaArrowAltCircleLeft size="33" />
-            </div>
-            <div className="bg-primary p-2 mb-2 rounded-lg">
-              <h2 className="text-md text-center">Order Number</h2>
-              <p className="text-center">123DW5XQ</p>
-            </div>
-            <div className="bg-primary p-2 mb-2 rounded-lg">
-              <h2 className="text-md text-center">Price</h2>
-              <p className="text-center">$ {order.price}</p>
-            </div>
+    <div>
+    {order.map((o) => (
+      <div className="my-8 mx-auto w-3/4">
+     
+      <div o={o} key={o.productId}>
+      <div className="md:w-full h-full flex justify-center items-center bg-black text-white py-8 rounded-t-3xl">
+        <div>
+          <div onClick={backBtn} className="flex justify-center mb-5">
+            <FaArrowAltCircleLeft size="33" />
           </div>
-        </div>
-        <div class="h-full w-full p-5 bg-blue-300">
-          <div className="flex justify-between">
-            <h2 class="card-title uppercase mb-1">Enter Card Info</h2>
-            <img
-              className="w-20"
-              src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png"
-              alt=""
-            />
+          <div className="bg-primary p-2 mb-2 rounded-lg">
+            <h2 className="text-md text-center">Order Number</h2>
+            <p className="text-center">123DW5XQ</p>
           </div>
-          <hr />
-          <h2 className="text-2xl text-center py-5">
-            Pay for {order.shopName}
-          </h2>
-          <Elements stripe={stripePromise}>
-            <CheckoutForm order={order} />
-          </Elements>
+          <div className="bg-primary p-2 mb-2 rounded-lg">
+            <h2 className="text-md text-center">Price</h2>
+            <p className="text-center">$ {o?.price}</p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="h-full w-full p-5 bg-blue-300 rounded-b-3xl shadow-2xl">
+    <div className="flex justify-between">
+      <h2 className="text-2xl text-center py-2">Please Pay</h2>
+      <img
+        className="w-20"
+        src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png"
+        alt=""
+      />
+    </div>
+    <hr />
+    <p class="text-xl py-5 uppercase mb-1">Enter Card Info</p>
+    <Elements stripe={stripePromise}>
+      <CheckoutForm o={o} />
+    </Elements>
+  </div>
+      </div>
+      ))}
+   
+    </div>
+    
   );
 };
 

@@ -15,6 +15,7 @@ const Purchase = () => {
     const userEmail = user.email;
     const imgURL = product.img;
     const price = product.price;
+    const name = product.name;
     const orderQuantity = parseInt(event.target.order.value);
     const totalPrice = price * orderQuantity;
     const shopName = event.target.shop.value;
@@ -28,10 +29,11 @@ const Purchase = () => {
       return toast.error("Sorry!! minimum order 50");
     }
     const placeOrder = {
-      productId:id,
+      name,
+      productId: id,
       email: userEmail,
       shopName,
-      price:totalPrice,
+      price: totalPrice,
       img: imgURL,
       address,
       phone,
