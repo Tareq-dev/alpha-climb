@@ -77,10 +77,17 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="h-8 mt-2" to="/dashboard">
-              Dashboard
+            <NavLink className="h-8 mt-2" to="/portfolio">
+              Portfolio
             </NavLink>
           </li>
+          {user && (
+            <li>
+              <NavLink className="h-8 mt-2" to="/dashboard">
+                Dashboard
+              </NavLink>
+            </li>
+          )}
           {user?.email ? (
             <button
               onClick={logOut}

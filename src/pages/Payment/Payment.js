@@ -17,7 +17,7 @@ const Payment = () => {
   const navigate = useNavigate();
   const email = user?.email;
   useEffect(() => {
-    const url = `http://localhost:5000/orders/${email}/${id}`;
+    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

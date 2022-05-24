@@ -8,7 +8,7 @@ const AddProducts = () => {
   const { register, handleSubmit } = useForm();
   const [user] = useAuthState(auth);
   const onSubmit = (data, event) => {
-    fetch("http://localhost:5000/products", {
+    fetch("https://intense-beyond-53965.herokuapp.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

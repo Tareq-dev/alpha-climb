@@ -17,7 +17,7 @@ const MyProfile = () => {
   const [user, isLoading] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const email = user.email;
-  fetch(`http://localhost:5000/user/profile/${email}`)
+  fetch(`https://intense-beyond-53965.herokuapp.com/user/profile/${email}`)
     .then((res) => res.json())
     .then((data) => {
       const update = data.slice(-1);
@@ -31,7 +31,7 @@ const MyProfile = () => {
     });
 
   const onSubmit = (data, event) => {
-    fetch("http://localhost:5000/user/profile", {
+    fetch("https://intense-beyond-53965.herokuapp.com/user/profile", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
