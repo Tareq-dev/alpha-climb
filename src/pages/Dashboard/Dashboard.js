@@ -7,10 +7,11 @@ import Loading from "../../components/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import "./Dashboard.css";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Dashboard = () => {
   const [user, loading] = useAuthState(auth);
-
+  const [admin] = useAdmin(user);
   if (loading) {
     return <Loading />;
   }
@@ -35,66 +36,90 @@ const Dashboard = () => {
               My Profile
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to="/dashboard/my-order"
-            >
-              <FontAwesomeIcon
-                className="text-xl text-orange-500"
-                icon={faStar}
-              />
-              My Order
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to="/dashboard/my-review"
-            >
-              <FontAwesomeIcon
-                className="text-xl text-orange-500"
-                icon={faStar}
-              />
-              Add Review
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to="/dashboard/add-product"
-            >
-              <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
-              Add Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to="/dashboard/manage-products"
-            >
-              <FontAwesomeIcon className="text-xltext-black" icon={faStar} />
-              Manage Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to="/dashboard/manage-orders"
-            >
-              <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
-              Manage Orders
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to="/dashboard/users"
-            >
-              <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
-              Users
-            </NavLink>
-          </li>
+          {!admin && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+                to="/dashboard/my-order"
+              >
+                <FontAwesomeIcon
+                  className="text-xl text-orange-500"
+                  icon={faStar}
+                />
+                My Order
+              </NavLink>
+            </li>
+          )}
+          {!admin && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+                to="/dashboard/my-review"
+              >
+                <FontAwesomeIcon
+                  className="text-xl text-orange-500"
+                  icon={faStar}
+                />
+                Add Review
+              </NavLink>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+                to="/dashboard/add-product"
+              >
+                <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
+                Add Products
+              </NavLink>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+                to="/dashboard/manage-products"
+              >
+                <FontAwesomeIcon className="text-xltext-black" icon={faStar} />
+                Manage Products
+              </NavLink>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+                to="/dashboard/manage-orders"
+              >
+                <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
+                Manage Orders
+              </NavLink>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+                to="/dashboard/users"
+              >
+                <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
+                Users
+              </NavLink>
+            </li>
+          )}
         </ul>
       </div>
     </div>

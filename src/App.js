@@ -10,16 +10,17 @@ import Login from "./pages/Login/Login";
 import RequireAuth from "./pages/Login/RequireAuth";
 import Register from "./pages/Login/Register";
 import Payment from "./pages/Payment/Payment";
-import MyReview from './pages/Dashboard/MyReview';
+import MyReview from "./pages/Dashboard/MyReview";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import MyOrder from './pages/Dashboard/MyOrder';
-import AllUser from './pages/Dashboard/AllUser';
-import ManageProducts from './pages/Dashboard/ManageProducts';
-import ManageOrder from './pages/Dashboard/ManageOrder';
-import AddProducts from './pages/Dashboard/AddProducts';
-import MyProfile from './pages/Dashboard/MyProfile';
+import MyOrder from "./pages/Dashboard/MyOrder";
+import AllUser from "./pages/Dashboard/AllUser";
+import ManageProducts from "./pages/Dashboard/ManageProducts";
+import ManageOrder from "./pages/Dashboard/ManageOrder";
+import AddProducts from "./pages/Dashboard/AddProducts";
+import MyProfile from "./pages/Dashboard/MyProfile";
 import NotFound from "./components/NotFound";
 import Blog from "./pages/Blog/Blog";
+import RequireAdmin from "./pages/Login/RequireAdmin";
 
 function App() {
   return (
@@ -40,7 +41,6 @@ function App() {
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route path="/products/:id" element={<Purchase />}></Route>
         <Route
           path="/payment/:id"
           element={
@@ -49,15 +49,63 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
         >
-          <Route index element={<MyProfile />}></Route>
-          <Route path="my-order" element={<MyOrder />}></Route>
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <MyProfile />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="my-order"
+            element={
+              <RequireAuth>
+                <MyOrder />
+              </RequireAuth>
+            }
+          ></Route>
           <Route path="my-review" element={<MyReview />}></Route>
-          <Route path="manage-products" element={<ManageProducts />}></Route>
-          <Route path="add-product" element={<AddProducts />}></Route>
-          <Route path="manage-orders" element={<ManageOrder />}></Route>
-          <Route path="users" element={<AllUser />}></Route>
+          <Route
+            path="manage-products"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="add-product"
+            element={
+              <RequireAdmin>
+                <AddProducts />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manage-orders"
+            element={
+              <RequireAdmin>
+                <ManageOrder />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
       </Routes>
       <ToastContainer />
