@@ -50,6 +50,7 @@ const MyReview = () => {
         />
         <form onSubmit={handleReview} className="">
           <textarea
+            required
             name="review"
             style={{ width: "300px" }}
             class="textarea border-gray-400 "

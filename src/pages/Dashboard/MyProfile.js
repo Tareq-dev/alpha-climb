@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FaFacebook } from "react-icons/fa";
@@ -13,26 +13,10 @@ const MyProfile = () => {
   const [img, setImg] = useState("");
   const [facebook, setFacebook] = useState("");
   const [linkedIn, setLinkedin] = useState("");
+  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
   const [user, isLoading] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
-
-  const onSubmit = (data, event) => {
-   
-    fetch("http://localhost:5000/user/profile", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-    event.target.reset();
-  };
   const email = user.email;
-
   fetch(`http://localhost:5000/user/profile/${email}`)
     .then((res) => res.json())
     .then((data) => {
@@ -46,6 +30,21 @@ const MyProfile = () => {
       setLinkedin(updatedProfile.linkedIn);
     });
 
+  const onSubmit = (data, event) => {
+    fetch("http://localhost:5000/user/profile", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+    event.target.reset();
+    forceUpdate();
+  };
 
   if (isLoading) {
     return <Loading />;
@@ -66,14 +65,14 @@ const MyProfile = () => {
             <p className="text-sm text-gray-400 mt-1">{user?.email}</p>
           </div>
         </div>
-          <div className="mt-4 flex flex-row">
-            <a target="_blank" rel="noreferrer" href={facebook}>
-              <FaFacebook size="25" className="text-blue-600 mx-5" />
-            </a>
-            <a target="_blank" rel="noreferrer" href={linkedIn}>
-              <FaLinkedinIn size="25" className="text-blue-600" />
-            </a>
-          </div>
+        <div className="mt-4 flex flex-row">
+          <a target="_blank" rel="noreferrer" href={facebook}>
+            <FaFacebook size="25" className="text-blue-600 mx-5" />
+          </a>
+          <a target="_blank" rel="noreferrer" href={linkedIn}>
+            <FaLinkedinIn size="25" className="text-blue-600" />
+          </a>
+        </div>
       </div>
       <div className="mx-10">
         <h2 className="text-xl">Update profile information ?</h2>
