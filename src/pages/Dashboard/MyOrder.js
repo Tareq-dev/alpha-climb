@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const MyOrder = () => {
+  const [paid, setPaid] = useState([]);
   const [user] = useAuthState(auth);
   const email = user.email;
   const [order, setOrder] = useState([]);
@@ -14,6 +15,7 @@ const MyOrder = () => {
         setOrder(data);
       });
   }, []);
+
   return (
     <div>
       <h2 className="text-center text-2xl font-semibold mb-5">
@@ -35,7 +37,7 @@ const MyOrder = () => {
           <tbody>
             {order.map((o, i) => (
               <tr key={i} o={o}>
-                <th>{i+1}</th>
+                <th>{i + 1}</th>
                 <td>{o?.name}</td>
                 <td>{o.orderQuantity}</td>
                 <td>{o.price}</td>
