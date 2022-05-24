@@ -8,6 +8,7 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
   const logOut = () => {
     signOut(auth);
+    localStorage.removeItem("accessToken");
   };
   return (
     <div className="navbar bg-black text-white">
@@ -44,7 +45,10 @@ const Navbar = () => {
               </NavLink>
             </li>
             {user?.email ? (
-              <button onClick={logOut} className="btn btn-sm mt-2 btn-outline btn-info">
+              <button
+                onClick={logOut}
+                className="btn btn-sm mt-2 btn-outline btn-info"
+              >
                 Sign Out
               </button>
             ) : (
@@ -78,7 +82,10 @@ const Navbar = () => {
             </NavLink>
           </li>
           {user?.email ? (
-            <button onClick={logOut} className="btn btn-sm mt-2 btn-outline btn-info">
+            <button
+              onClick={logOut}
+              className="btn btn-sm mt-2 btn-outline btn-info"
+            >
               Sign Out
             </button>
           ) : (
