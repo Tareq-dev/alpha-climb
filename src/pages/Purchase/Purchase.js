@@ -61,19 +61,12 @@ const Purchase = () => {
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-14 mx-auto">
-        <div className="lg:w-full mx-auto flex flex-wrap">
-          <div className="lg:w-1/2  lg:h-auto h-80">
-            <img
-              alt="ecommerce"
-              className="w-full lg:h-auto h-80 object-cover object-center rounded"
-              src="https://api.lorem.space/image/shoes?w=400&h=225"
-            />
-          </div>
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h2 className="text-xl title-font text-gray-500 mb-3 tracking-widest">
-              User Name :{user?.displayName}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h2 className="text-md title-font text-gray-500 tracking-widest">
+              User Name : {user?.displayName}
             </h2>
-            <h2 className="text-xl title-font text-gray-500 mb-3 tracking-widest">
+            <h2 className="text-md title-font text-gray-500 mb-3 tracking-widest">
               User Email : {user?.email}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
@@ -81,71 +74,86 @@ const Purchase = () => {
             </h1>
 
             <p className="leading-relaxed">{product.description}</p>
-            <div className="mt-4 pb-5 border-b-2 border-gray-100 mb-5">
-              <span className="title-font mb-6 block font-medium text-2xl text-gray-900">
+            <div className="mt-2 pb-2 mb-5">
+              <span className="title-font mb-3 block font-medium text-2xl text-gray-900">
                 $ {product.price}
               </span>
-              <div className="mb-4">
+              <div className="mb-2">
                 <h2 className="text-xl text-sky-600 font-semibold">
                   Available Quantity :
                   <span name="available"> {product.availableQuantity}</span> Pcs
                 </h2>
-                <p className="text-xl mt-2 text-sky-600 font-semibold">
+                <p className="text-md mt-2 text-sky-600 font-semibold">
                   Minimum Order : 50 Pcs
                 </p>
               </div>
-              <div className="flex mt-5">
-                <form
-                  onSubmit={handlePurchases}
-                  className="flex-col justify-center items-center border-2 p-4"
-                >
-                  <div>
-                    <label htmlFor="">Shop Name</label>
-                    <input
-                      type="text"
-                      name="shop"
-                      required
-                      className="border-2 text-center mx-3 h-8 p-2 rounded w-48"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <label htmlFor="">Address</label>
-                    <input
-                      type="text"
-                      name="address"
-                      className="border-2 text-center mx-3 h-8 p-2 rounded w-48"
-                    />
-                  </div>
-
-                  <div className="mt-4">
-                    <label htmlFor="">Phone No :</label>
-                    <input
-                      type="number"
-                      name="phone"
-                      className="border-2 text-center mx-3 h-8 p-2 rounded w-48"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <label htmlFor="">Order Quantity</label>
-                    <input
-                      type="number"
-                      name="order"
-                      min="0"
-                      placeholder="50"
-                      className="border-2 text-center mx-3 h-8 p-2 rounded w-48"
-                    />
-                  </div>
-                  <div className="flex justify-center mt-5">
-                    <input
-                      className="mx-3 text-white font-semibold bg-sky-500 border-0 py-1 px-3 h-8 focus:outline-none rounded"
-                      type="submit"
-                      value="Purchase"
-                    />
-                  </div>
-                </form>
-              </div>
             </div>
           </div>
+          <div className="flex justify-center">
+            <img
+              alt="ecommerce"
+              className="w-full lg:h-auto h-80 object-cover object-center rounded"
+              src="https://api.lorem.space/image/shoes?w=400&h=225"
+            />
+          </div>
+        </div>
+        <div className="flex justify-center mt-12">
+          <form
+            onSubmit={handlePurchases}
+            className="flex-col w-1/2 justify-center items-center border-2 p-4"
+          >
+            <div>
+              <label className="block px-3" htmlFor="">
+                Shop Name
+              </label>
+              <input
+                type="text"
+                name="shop"
+                required
+                className="border-2 w-3/4 mx-3 h-10 p-2 rounded"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block px-3" htmlFor="">
+                Address
+              </label>
+              <input
+                type="text"
+                name="address"
+                className="border-2 mx-3 h-10 p-2 rounded w-3/4"
+              />
+            </div>
+
+            <div className="mt-4">
+              <label className="block px-3" htmlFor="">
+                Phone No :
+              </label>
+              <input
+                type="number"
+                name="phone"
+                className="border-2  mx-3 h-10 p-2 rounded w-3/4"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block px-3" htmlFor="">
+                Order Quantity
+              </label>
+              <input
+                type="number"
+                name="order"
+                min="0"
+                placeholder="50"
+                className="border-2 mx-3 h-10 p-2 rounded w-3/4"
+              />
+            </div>
+            <div className="flex justify-center mt-5">
+              <input
+                className="mx-3 text-white h-10 font-semibold bg-sky-500 border-0 py-1 px-3 rounded"
+                type="submit"
+                value="Purchase"
+              />
+            </div>
+          </form>
         </div>
       </div>
     </section>

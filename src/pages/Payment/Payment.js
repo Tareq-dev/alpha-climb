@@ -21,7 +21,6 @@ const Payment = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setOrder(data);
       });
   }, [email, id]);
@@ -33,7 +32,7 @@ const Payment = () => {
   };
   return (
     <div>
-      {order.map((o) => (
+      {order.slice(-1).map((o) => (
         <div className="my-8 mx-auto w-3/4">
           <div o={o} key={o.productId}>
             <div className="md:w-full h-full justify-center items-center bg-black text-white py-8 rounded-t-3xl">
@@ -47,7 +46,7 @@ const Payment = () => {
                 </div>
                 <div className="bg-sky-300 text-black px-5 py-3 mb-2 rounded-lg">
                   <h2 className="text-md text-center">Total Price</h2>
-                  <p className="text-center">$ {o?.price}</p>
+                  <p className="text-center">$ {o.price}</p>
                 </div>
               </div>
             </div>

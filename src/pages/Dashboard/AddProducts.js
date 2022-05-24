@@ -1,13 +1,30 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddProducts = () => {
   const { register, handleSubmit } = useForm();
   const [user] = useAuthState(auth);
   const onSubmit = (data, event) => {
-    console.log(data);
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          toast("Successfully Added Products");
+          event.target.reset();
+        } else {
+          toast.error("Add product Fail");
+        }
+      });
   };
 
   return (

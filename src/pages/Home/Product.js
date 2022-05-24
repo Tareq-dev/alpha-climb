@@ -11,7 +11,6 @@ const Product = ({ product }) => {
     name,
     description,
     price,
-    minimumQuantity,
     availableQuantity,
   } = product;
   return (
@@ -31,10 +30,7 @@ const Product = ({ product }) => {
         <span className="bg-sky-100 py-1 px-2 rounded-xl">
           Available: {availableQuantity} Pcs
         </span>
-        <span className="bg-sky-100 py-1 px-2 rounded-xl">
-          Minimum Order: {minimumQuantity} Pcs
-        </span>
-
+     
         <div className="card-actions justify-center">
           <button
             onClick={() => navigateToPurchasePage(_id)}
