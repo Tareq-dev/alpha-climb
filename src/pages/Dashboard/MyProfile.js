@@ -44,13 +44,8 @@ const MyProfile = () => {
       setImg(updatedProfile.img);
       setFacebook(updatedProfile.facebook);
       setLinkedin(updatedProfile.linkedIn);
-      //  console.log(updatedProfile);
     });
-  //   const updated = profile?.slice(-1);
-  //   console.log(updated[0]);
-  //   const updatedProfile = updated[0];
-  //   const { firstName, lastName, img, phone, address, linkedIn, facebook } =
-  //     updatedProfile;
+
 
   if (isLoading) {
     return <Loading />;

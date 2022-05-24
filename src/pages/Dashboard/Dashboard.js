@@ -9,7 +9,7 @@ import { faStar, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  const [user,loading] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   if (loading) {
     return <Loading />;
@@ -20,9 +20,9 @@ const Dashboard = () => {
       <div class="drawer-content py-5">
         <Outlet></Outlet>
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side border-r-2">
         <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu h-min md:my-24 p-2 overflow-y-auto w-56 bg-base-100 text-base-content border-r-2">
+        <ul class="menu h-min md:my-24 p-2 overflow-y-auto w-56 bg-base-100 text-base-content">
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "active-link" : "link")}

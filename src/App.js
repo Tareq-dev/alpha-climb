@@ -18,6 +18,8 @@ import ManageProducts from './pages/Dashboard/ManageProducts';
 import ManageOrder from './pages/Dashboard/ManageOrder';
 import AddProducts from './pages/Dashboard/AddProducts';
 import MyProfile from './pages/Dashboard/MyProfile';
+import NotFound from "./components/NotFound";
+import Blog from "./pages/Blog/Blog";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           }
         ></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/*" element={<NotFound />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/products/:id" element={<Purchase />}></Route>
         <Route

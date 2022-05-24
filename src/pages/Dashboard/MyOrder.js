@@ -3,7 +3,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const MyOrder = () => {
-  const [paid, setPaid] = useState([]);
   const [user] = useAuthState(auth);
   const email = user.email;
   const [order, setOrder] = useState([]);
