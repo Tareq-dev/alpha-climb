@@ -3,9 +3,17 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
+import useProfile from "./../Hooks/useProfile";
+import Loading from "./Loading";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const [profile, loadUser] = useProfile([]);
+
+  // console.log(profile);
+  if (loadUser) {
+    return <Loading />;
+  }
   const logOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
@@ -64,8 +72,8 @@ const Navbar = () => {
           Alpha Climb
         </Link>
       </div>
-      <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
+      <div className="navbar-end hidden lg:flex mx-2">
+        <ul className="menu menu-horizontal">
           <li>
             <NavLink className="h-8 mt-2" to="/products">
               Products
@@ -76,28 +84,37 @@ const Navbar = () => {
               Blog
             </NavLink>
           </li>
-          <li>
-            <NavLink className="h-8 mt-2" to="/portfolio">
-              Portfolio
-            </NavLink>
-          </li>
           {user && (
             <li>
-              <NavLink className="h-8 mt-2" to="/dashboard">
+              <NavLink className="h-8 mt-2" to="/portfolio">
+                Portfolio
+              </NavLink>
+            </li>
+          )}
+          {user && (
+            <li>
+              <NavLink className="h-8 mt-2 mx-2" to="/dashboard">
                 Dashboard
               </NavLink>
             </li>
           )}
           {user?.email ? (
-            <button
-              onClick={logOut}
-              className="btn btn-sm mt-2 btn-outline btn-info"
-            >
-              Sign Out
-            </button>
+            <div className="flex justify-center items-center">
+              <button
+                onClick={logOut}
+                className="btn btn-sm mx-3 mt-2 btn-outline btn-info"
+              >
+                Sign Out
+              </button>
+              <div class="avatar">
+                <div class="w-10 mx-2 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={user?.photoURL || profile.img} alt="" />
+                </div>
+              </div>
+            </div>
           ) : (
             <li>
-              <NavLink className="h-8 mt-2" to="/login">
+              <NavLink className="h-8 mx-2 px-3 mt-2" to="/login">
                 Login
               </NavLink>
             </li>

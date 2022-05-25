@@ -7,7 +7,7 @@ const MyOrder = () => {
   const email = user.email;
   const [order, setOrder] = useState([]);
   useEffect(() => {
-    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}`;
+    const url = `http://localhost:5000/orders/${email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

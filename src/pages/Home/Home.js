@@ -4,6 +4,7 @@ import BussinessSummery from "./BussinessSummery";
 import Footer from "./Footer";
 import Products from "./Products";
 import Review from "./Review";
+import Subscription from "./Subscription";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Products />
       <BussinessSummery />
       <Review />
+      <Subscription />
       <Footer />
     </div>
   );

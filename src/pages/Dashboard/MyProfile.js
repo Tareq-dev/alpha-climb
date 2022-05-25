@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FaFacebook } from "react-icons/fa";
@@ -7,31 +7,24 @@ import Loading from "../../components/Loading";
 import auth from "../../firebase.init";
 
 const MyProfile = () => {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
-  const [img, setImg] = useState("");
-  const [facebook, setFacebook] = useState("");
-  const [linkedIn, setLinkedin] = useState("");
-  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
   const [user, isLoading] = useAuthState(auth);
+  const [profile, setProfile] = useState([]);
   const { register, handleSubmit } = useForm();
   const email = user.email;
-  fetch(`https://intense-beyond-53965.herokuapp.com/user/profile/${email}`)
-    .then((res) => res.json())
-    .then((data) => {
-      const update = data.slice(-1);
-      const updatedProfile = update[0];
-      setName(updatedProfile.name);
-      setAddress(updatedProfile.address);
-      setPhone(updatedProfile.phone);
-      setImg(updatedProfile.img);
-      setFacebook(updatedProfile.facebook);
-      setLinkedin(updatedProfile.linkedIn);
-    });
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProfile(data);
+      });
+  }, [email]);
+  if (isLoading) {
+    return <Loading />;
+  }
   const onSubmit = (data, event) => {
-    fetch("https://intense-beyond-53965.herokuapp.com/user/profile", {
+    const updatedData = data;
+    fetch(`http://localhost:5000/user/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -40,10 +33,9 @@ const MyProfile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        event.target.reset();
+        setProfile(updatedData);
       });
-    event.target.reset();
-    forceUpdate();
   };
 
   if (isLoading) {
@@ -55,21 +47,25 @@ const MyProfile = () => {
         <div className="flex items-center w-full mb-3">
           <div class="avatar online">
             <div class="w-24 rounded-full shadow-2xl">
-              <img src={img || user.photoURL} alt={user.displayName} />
+              <img src={profile.img || user.photoURL} alt={user.displayName} />
             </div>
           </div>
           <div className="mx-8">
-            <h2 className="text-xl mt-1">{name || user.displayName}</h2>
-            <p className="text-sm text-gray-400 mt-1">{address}</p>
-            <p className="text-sm text-gray-400 mt-1">{phone}</p>
-            <p className="text-sm text-gray-400 mt-1">{user?.email}</p>
+            <h2 className="text-xl mt-1">
+              {profile.name || user.displayName} ({profile?.role || "User"})
+            </h2>
+            <p className="text-sm text-gray-400 mt-1">{profile?.address}</p>
+            <p className="text-sm text-gray-400 mt-1">{profile?.phone}</p>
+            <p className="text-sm text-gray-400 mt-1">
+              {profile.email || user?.email}
+            </p>
           </div>
         </div>
         <div className="mt-4 flex flex-row">
-          <a target="_blank" rel="noreferrer" href={facebook}>
+          <a target="_blank" rel="noreferrer" href={profile?.facebook}>
             <FaFacebook size="25" className="text-blue-600 mx-5" />
           </a>
-          <a target="_blank" rel="noreferrer" href={linkedIn}>
+          <a target="_blank" rel="noreferrer" href={profile?.linkedIn}>
             <FaLinkedinIn size="25" className="text-blue-600" />
           </a>
         </div>

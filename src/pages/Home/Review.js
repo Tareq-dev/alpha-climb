@@ -14,7 +14,7 @@ const Review = () => {
       <h2 className="text-center text-4xl font-semibold">
         Our Customers Reviews
       </h2>
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-14 mx-auto">
         <div className="flex flex-wrap -m-4">
           {reviews.slice(-3).map((review) => (
             <div
@@ -46,8 +46,8 @@ const Review = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center pt-6">
-          <button className="btn btn-sm">
+        <div className="flex justify-center pt-14">
+          <button className="btn btn-md bg-sky-300">
             <Link to="/dashboard/my-review">Add Review</Link>
           </button>
         </div>
