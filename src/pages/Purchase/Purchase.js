@@ -39,7 +39,7 @@ const Purchase = () => {
       phone,
       orderQuantity,
     };
-    fetch("https://intense-beyond-53965.herokuapp.com/orders", {
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,9 +53,7 @@ const Purchase = () => {
         }
       });
 
-    //************* set these quantity on the products quantity *******************
-    //     const remainingQuantity = availableQuantity - orderQuantity;
-    //     console.log(remainingQuantity);
+   
   };
 
   return (
@@ -93,7 +91,7 @@ const Purchase = () => {
             <img
               alt="ecommerce"
               className="w-full lg:h-auto h-80 object-cover object-center rounded"
-              src="https://api.lorem.space/image/shoes?w=400&h=225"
+              src={product?.img}
             />
           </div>
         </div>

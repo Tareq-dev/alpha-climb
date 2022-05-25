@@ -1,6 +1,6 @@
 import React from "react";
 import { DiCodeigniter } from "react-icons/di";
-import Footer from './../Home/Footer';
+import Footer from "./../Home/Footer";
 const Portfolio = () => {
   return (
     <div>
@@ -55,7 +55,7 @@ const Portfolio = () => {
           </div>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
-          <div className="flex items-center border-r-8 border-orange-300">
+          <div className="flex items-center md:border-r-8 md:border-orange-300">
             <div>
               <h2 className="text-3xl font-bold">Education :</h2>
               <div className="py-3">
@@ -107,12 +107,16 @@ const Portfolio = () => {
         <section className="py-8">
           <h2 className="text-3xl font-bold text-center my-4">My Project</h2>
           <div class="flex flex-col md:flex-row bg-base-100 shadow-xl p-2 rounded-xl">
-            <img className='md:w-48 w-full' src="https://i.ibb.co/ykPx303/pedu.png" alt="Pedal-prince" />
+            <img
+              className="md:w-48 w-full"
+              src="https://i.ibb.co/ykPx303/pedu.png"
+              alt="Pedal-prince"
+            />
             <div class="p-2">
               <div className="">
                 <h3 className="text-xl font-bold">
-                  Project Name :
-                  <span className="text-orange-400"> Pedal Prince</span> ||{" "}
+                  Project Name :<span className="text-info"> Pedal Prince</span>{" "}
+                  ||{" "}
                   <p className="text-xl inline-block text-blue-500 font-bold underline mx-4">
                     <a
                       target="_blank"
@@ -134,21 +138,21 @@ const Portfolio = () => {
               <h3 className="text-xl font-bold">Features : </h3>
 
               <div className="flex">
-                <DiCodeigniter className="text-orange-400 text-2xl mx-2" />
+                <DiCodeigniter className="text-info text-2xl mx-2" />
                 <p className="mt-1">
                   A single page web application for Cycle warehouse management.
                 </p>
               </div>
 
               <div className="flex">
-                <DiCodeigniter className="text-orange-400 text-2xl mx-2" />
+                <DiCodeigniter className="text-info text-2xl mx-2" />
                 <p className="mt-1">
                   User can add new item for store products. When products are
                   deliver user can handle it easily.
                 </p>
               </div>
               <div className="flex">
-                <DiCodeigniter className="text-orange-400 text-2xl mx-2" />
+                <DiCodeigniter className="text-info text-2xl mx-2" />
                 <p className="mt-1">
                   User added how amounts of products it also be displayed on my
                   item page.
@@ -157,15 +161,16 @@ const Portfolio = () => {
             </div>
           </div>
           <div class="flex flex-col md:flex-row bg-base-100 shadow-xl mt-5 p-2 rounded-xl">
-            <img className='md:w-48 w-full'
+            <img
+              className="md:w-48 w-full"
               src="https://i.ibb.co/c8q59ZS/heaven.png"
               alt="Movie"
             />
             <div class="p-2">
               <div className="">
                 <h3 className="text-xl font-bold">
-                  Project Name :
-                  <span className="text-orange-400"> Heaven Show</span> ||{" "}
+                  Project Name :<span className="text-info"> Heaven Show</span>{" "}
+                  ||{" "}
                   <p className="text-xl inline-block text-blue-500 font-bold underline mx-4">
                     <a
                       target="_blank"
@@ -181,30 +186,81 @@ const Portfolio = () => {
 
               <h3 className="text-xl font-bold">Technology : </h3>
               <p class="">
-                React.js , Tailwind CSS , Firebase authentication,
-                Firebase,Node.js , MongoDB , Heroku.
+                React.js , Tailwind CSS ,Node.js , MongoDB , Heroku, Firebase
+                authentication, Firebase.
               </p>
               <h3 className="text-xl font-bold">Features : </h3>
 
               <div className="flex">
-                <DiCodeigniter className="text-orange-400 text-2xl mx-2" />
+                <DiCodeigniter className="text-info text-2xl mx-2" />
                 <p className="mt-1">
-                  A single page web application for Cycle warehouse management.
+                  It is an service provider website for tourist.
                 </p>
               </div>
 
               <div className="flex">
-                <DiCodeigniter className="text-orange-400 text-2xl mx-2" />
+                <DiCodeigniter className="text-info text-2xl mx-2" />
                 <p className="mt-1">
-                  User can add new item for store products. When products are
-                  deliver user can handle it easily.
+                  User can get service and checkOut sigle service .
                 </p>
               </div>
               <div className="flex">
-                <DiCodeigniter className="text-orange-400 text-2xl mx-2" />
+                <DiCodeigniter className="text-info text-2xl mx-2" />
                 <p className="mt-1">
-                  User added how amounts of products it also be displayed on my
-                  item page.
+                  Here also implements Real time authentication system
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row bg-base-100 shadow-xl mt-5 p-2 rounded-xl">
+            <img
+              className="md:w-48 w-full"
+              src="https://i.ibb.co/Fg0cKrj/car.png"
+              alt="Movie"
+            />
+            <div class="p-2">
+              <div className="">
+                <h3 className="text-xl font-bold">
+                  Project Name :<span className="text-info"> Car Repair</span>
+                  ||
+                  <p className="text-xl inline-block text-blue-500 font-bold underline mx-4">
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://car-repair-1e5a2.web.app/"
+                      alt=""
+                    >
+                      Live Site
+                    </a>
+                  </p>
+                </h3>
+              </div>
+
+              <h3 className="text-xl font-bold">Technology : </h3>
+              <p class="">
+                React.js project with Firebase authentication, Firebase,Node.js
+                , MongoDB , Heroku.
+              </p>
+              <h3 className="text-xl font-bold">Features : </h3>
+
+              <div className="flex">
+                <DiCodeigniter className="text-info text-2xl mx-2" />
+                <p className="mt-1">
+                  Car Repair site provides services for Car service
+                </p>
+              </div>
+
+              <div className="flex">
+                <DiCodeigniter className="text-info text-2xl mx-2" />
+                <p className="mt-1">
+                  Here visitor need an account to get a service with firebase
+                  Authentication system.
+                </p>
+              </div>
+              <div className="flex">
+                <DiCodeigniter className="text-info text-2xl mx-2" />
+                <p className="mt-1">
+                  It is also connect with database and admin can add service.
                 </p>
               </div>
             </div>

@@ -5,9 +5,12 @@ import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
 import useProfile from "./../Hooks/useProfile";
 import Loading from "./Loading";
+import useAdmin from "../Hooks/useAdmin";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
+
   const [profile, loadUser] = useProfile([]);
 
   // console.log(profile);
@@ -52,6 +55,94 @@ const Navbar = () => {
                 Blog
               </NavLink>
             </li>
+            {user && (
+              <li className="px-5">
+                <NavLink className="h-8 mt-2" to="/portfolio">
+                  Portfolio
+                </NavLink>
+              </li>
+            )}
+            {user && (
+              <li className="px-5">
+                <NavLink className="h-8 mt-2" to="/dashboard">
+                  Dashboard
+                </NavLink>
+              </li>
+            )}
+            {!admin && (
+              <li className="px-5">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/dashboard/my-order"
+                >
+                  
+                  My Order
+                </NavLink>
+              </li>
+            )}
+            {!admin && (
+              <li className="px-5">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/dashboard/my-review"
+                >
+                 
+                  Add Review
+                </NavLink>
+              </li>
+            )}
+            {admin && (
+              <li className="px-5">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/dashboard/add-product"
+                >
+                  Add Products
+                </NavLink>
+              </li>
+            )}
+            {admin && (
+              <li className="px-5">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/dashboard/manage-products"
+                >
+                  Manage Products
+                </NavLink>
+              </li>
+            )}
+            {admin && (
+              <li className="px-5">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/dashboard/manage-orders"
+                >
+                  Manage Orders
+                </NavLink>
+              </li>
+            )}
+            {admin && (
+              <li className="px-5">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/dashboard/users"
+                >
+                  Users
+                </NavLink>
+              </li>
+            )}
             {user?.email ? (
               <button
                 onClick={logOut}
@@ -60,8 +151,8 @@ const Navbar = () => {
                 Sign Out
               </button>
             ) : (
-              <li>
-                <NavLink className="h-8 mt-2" to="/login">
+              <li className="px-5">
+                <NavLink className="h-8 mt-2 btn-outline btn-info" to="/login">
                   Login
                 </NavLink>
               </li>

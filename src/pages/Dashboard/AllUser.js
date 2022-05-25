@@ -9,7 +9,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://intense-beyond-53965.herokuapp.com/user", {
+    fetch("http://localhost:5000/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -20,13 +20,24 @@ const AllUser = () => {
   if (isLoading) {
     return <Loading />;
   }
-
   return (
-    <div className="px-10">
+    <div class="overflow-x-auto w-full">
       <p className="text-center text-xl py-4">Total User : {users.length}</p>
-      {users.map((user) => (
-        <UserCard key={user._id} refetch={refetch} user={user} />
-      ))}
+
+      <table class="table w-full">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Admin / User</th>
+            <th>Remove User</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <UserCard key={user._id} refetch={refetch} user={user} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 // import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-const CheckoutForm = ({ o }) => {
+const CheckoutForm = ({ order }) => {
   const { id } = useParams();
   const stripe = useStripe();
   const elements = useElements();
@@ -12,19 +12,16 @@ const CheckoutForm = ({ o }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
 
-  const { price, name, email } = o;
+  const { price, name, email } = order;
   useEffect(() => {
     if (price) {
-      fetch(
-        "https://intense-beyond-53965.herokuapp.com/create-payment-intent",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ price }),
-        }
-      )
+      fetch("http://localhost:5000/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data?.clientSecret) {
@@ -81,7 +78,7 @@ const CheckoutForm = ({ o }) => {
         paymentId: id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://intense-beyond-53965.herokuapp.com/products/${id}`, {
+      fetch(`http://localhost:5000/order/${id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -90,7 +87,9 @@ const CheckoutForm = ({ o }) => {
         body: JSON.stringify(payment),
       })
         .then((res) => res.json())
-        .then((data) => {});
+        .then((data) => {
+          console.log(data);
+        });
     }
   };
 

@@ -26,7 +26,7 @@ const ManageOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
+          fetch(`http://localhost:5000/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -54,7 +54,7 @@ const ManageOrder = () => {
       <table class="table w-full">
         <thead>
           <tr>
-            <th>Sl</th>
+            <th>SL</th>
             <th>Name</th>
             <th>Price</th>
             <th>Order Quantity</th>

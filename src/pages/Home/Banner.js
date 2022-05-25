@@ -2,12 +2,19 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="max-h-full ">
+    <div className="max-h-full">
       <img
         className="lg:w-screen"
-        src="https://sky-cycle.com/wp-content/uploads/2021/06/ba764a994a3240568ebc53aa5889b1a2_1306x734-1024x576.jpg"
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mff-roka-0618-1-preview-maxwidth-3000-maxheight-3000-ppi-300-quality-90-1620433208.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=1600:*"
         alt=""
       />
+      <h2 className="text-center text-4xl md:text-5xl font-serif pt-5">
+        100 Cycling Kits to Completely Transform Your Bike Life Easier
+      </h2>
+      <p className="text-center text-xl text-gray-400 font-bold uppercase py-5">
+        WANT TO BE A BETTER CYCLIST? HERE IS A GENEROUS HELPING OF WISDOM THAT
+        STANDS THE TEST OF TIME.
+      </p>
     </div>
   );
 };

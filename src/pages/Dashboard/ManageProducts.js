@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://intense-beyond-53965.herokuapp.com/products")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -30,7 +30,7 @@ const ManageProducts = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`https://intense-beyond-53965.herokuapp.com/products/${id}`, {
+          fetch(`http://localhost:5000/products/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -39,7 +39,6 @@ const ManageProducts = () => {
                 (product) => product._id !== id
               );
               setProducts(remaining);
-              console.log(data);
             });
           swalWithBootstrapButtons.fire(
             "Deleted!",

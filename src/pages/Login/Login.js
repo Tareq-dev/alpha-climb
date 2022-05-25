@@ -5,6 +5,7 @@ import auth from "./../../firebase.init";
 import SocialLogin from "./SocialLogin";
 import Loading from "./../../components/Loading";
 import useToken from "../../Hooks/useToken";
+
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -28,49 +29,55 @@ const Login = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div className="flex justify-center">
-      <div className="shadow-xl p-8 rounded-lg mt-5">
-        <h2 className="text-2xl text-center">Login</h2>
-        <div className="flex justify-center pt-8">
-          <form className="flex-col justify-center mx-auto">
-            <label htmlFor="" className="text-md mx-2">
-              Email
-            </label>
-            <input
-              className="border-2 rounded-lg px-4 py-2 block w-80"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="" className="text-md mx-2 block mt-5">
-              Password
-            </label>
-            <input
-              className="border-2 rounded-lg px-4 py-2 block w-80"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Link to="/reset">Forgot Password ?</Link>
-            <button
-              className="border-2 rounded-lg px-4 py-2 block w-80 mt-5 bg-black text-white"
-              onClick={() => signInWithEmailAndPassword(email, password)}
-            >
-              Login
-            </button>
-          </form>
+    <div className="grid grid-cols-1 md:grid-cols-2 py-10">
+        <div className="rounded-lg m-4">
+          <h2 className="text-2xl text-center mt-5">Login</h2>
+          <div className="flex justify-center pt-8">
+            <form className="flex-col justify-center mx-auto px-4 ">
+              <label htmlFor="" className="text-md mx-2">
+                Email
+              </label>
+              <input
+                className="border-2 rounded-lg px-4 py-2 block w-80"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="" className="text-md mx-2 block mt-5">
+                Password
+              </label>
+              <input
+                className="border-2 rounded-lg px-4 py-2 block w-80"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Link to="/reset">Forgot Password ?</Link>
+              <button
+                className="border-2 rounded-lg px-4 py-2 block w-80 mt-5 bg-primary text-white text-xl"
+                onClick={() => signInWithEmailAndPassword(email, password)}
+              >
+                Login
+              </button>
+            </form>
+          </div>
+          <p className="text-center mt-5">
+            New to Alpha Climb?
+            <Link className="text-primary px-2" to="/register">
+              Create new account .
+            </Link>
+          </p>
+          <div className="text-center py-5 text-gray-400">
+            ________________OR________________
+          </div>
+          <SocialLogin />
         </div>
-        <p className="text-center mt-5">
-          New to Doctors Portal?
-          <Link className="text-primary px-2" to="/register">
-            Create new account
-          </Link>
-        </p>
-        <div className="text-center py-5 text-gray-400">
-          ________________OR________________
-        </div>
-        <SocialLogin />
-      </div>
+      <div className="md:flex justify-center items-center">
+      <img
+        src="https://i.ibb.co/XYyYgbC/undraw-secure-login-pdn4.png"
+        alt=""
+      />
+    </div>
     </div>
   );
 };

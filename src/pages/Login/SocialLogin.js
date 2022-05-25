@@ -28,14 +28,15 @@ const SocialLogin = () => {
     <div className="text-center">
       <button
         onClick={() => signInWithGoogle()}
-        className="btn btn-primary btn-outline"
       >
-        <img
-          className="w-8 px-1"
-          src="https://i.ibb.co/5k5bzzG/google.png"
-          alt=""
-        />
-        CONTINUE WITH GOOGLE
+        <div class="">
+          <div class="w-8 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+            <img
+              src="https://i.ibb.co/5k5bzzG/google.png"
+              alt=""
+            />
+          </div>
+        </div>
       </button>
     </div>
   );

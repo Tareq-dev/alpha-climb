@@ -10,132 +10,32 @@ const Footer = () => {
             to="/"
             className="flex title-font font-medium items-center md:justify-start justify-center text-white"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span className="ml-3 text-xl">Tailblocks</span>
+            <span className="ml-3 text-xl">Alpha Climb</span>
           </Link>
-          <p className="mt-2 text-sm text-white">
-            Air plant banjo lyft occupy retro adaptogen indego
+          <p className="mt-2 text-md text-white">
+            Transform Your Bike Life Easier
           </p>
         </div>
         <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-sky-500 tracking-widest text-sm mb-3">
-              CATEGORIES
+            <h2 className="title-font font-medium text-sky-500 tracking-widest text-md mb-3">
+              <Link to="/products">Products</Link>
             </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-            </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-sky-500 tracking-widest text-sm mb-3">
-              CATEGORIES
+            <h2 className="title-font font-medium text-sky-500 tracking-widest text-md mb-3">
+              <Link to="/portfolio">Portfolio</Link>
             </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-            </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-sky-500 tracking-widest text-sm mb-3">
-              CATEGORIES
+            <h2 className="title-font font-medium text-sky-500 tracking-widest text-md mb-3">
+              <Link to="/blog">Our Blog</Link>
             </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-            </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-sky-500 tracking-widest text-sm mb-3">
-              CATEGORIES
+            <h2 className="title-font font-medium text-sky-500 tracking-widest text-md mb-3">
+              <Link to="/dashboard"> Dashboard</Link>
             </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-white hover:text-sky-500">
-                  First Link
-                </Link>
-              </li>
-            </nav>
           </div>
         </div>
       </div>
@@ -146,7 +46,7 @@ const Footer = () => {
             <a
               href="https://twitter.com/tarequl"
               rel="noopener noreferrer"
-              className="text-white ml-1"
+              className="text-black ml-1"
               target="_blank"
             >
               @tarequl islam

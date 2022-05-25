@@ -1,10 +1,12 @@
 import React from "react";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const UserCard = ({ user }) => {
   const { email, role } = user;
+  // const [allUser, setAllUser] = [];
   const makeAdmin = () => {
-    fetch(`https://intense-beyond-53965.herokuapp.com/user/admin/${email}`, {
+    fetch(`http://localhost:5000/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -23,26 +25,80 @@ const UserCard = ({ user }) => {
         }
       });
   };
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+
+  const deleteUser = (email) => {
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes",
+        cancelButtonText: "cancel!",
+        reverseButtons: true,
+      })
+
+      .then((data) => {
+        if (data.isConfirmed) {
+          fetch(`http://localhost:5000/user/${email}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {});
+          swalWithBootstrapButtons.fire(
+            "Deleted!",
+            "Your file has been deleted.",
+            "success"
+          );
+        } else if (data.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your imaginary file is safe :)",
+            "error"
+          );
+        }
+      });
+  };
   return (
-    <div>
-      <div class="card w-full bg-base-200 shadow-xl mt-8">
-        <div class="flex justify-between p-2 items-center mt-2">
-          <div class="flex-initial w-32">
-            <p>{user.email}</p>
-          </div>
-          <div class="flex-initial w-32">
-            {role !== "admin" && (
-              <button onClick={makeAdmin} className="btn btn-xs">
-                Make Admin
-              </button>
-            )}
-          </div>
-          <div class="flex-initial w-32">
-            <button className="btn btn-xs bg-red-500">Remove User</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <tr>
+      <td>{user.email}</td>
+      {role !== "admin" ? (
+        <td>
+          <button onClick={makeAdmin} className="btn btn-xs">
+            Make Admin
+          </button>
+        </td>
+      ) : (
+        <td className="font-bold text-green-500">Admin</td>
+      )}
+      <th>
+        <button
+          onClick={() => deleteUser(email)}
+          className="btn btn-xs bg-red-500"
+        >
+          Remove User
+        </button>
+      </th>
+    </tr>
+    // <div>
+
+    //         {role !== "admin" && (
+    //
+    //         )}
+    //       </div>
+    //       <div class="flex-initial w-32">
+    //
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 

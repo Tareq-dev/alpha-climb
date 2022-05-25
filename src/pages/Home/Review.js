@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://intense-beyond-53965.herokuapp.com/reviews")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font py-4">
       <h2 className="text-center text-4xl font-semibold">
         Our Customers Reviews
       </h2>
@@ -22,16 +22,16 @@ const Review = () => {
               key={review._id}
               className="lg:w-1/3 lg:mb-0 mb-6 p-4"
             >
-              <div className="h-full text-center">
+              <div className="h-full text-center bg-sky-100 p-5 rounded-lg">
                 <img
                   alt="testimonial"
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
                   src={review.img}
                 />
-                <p className="text-justify h-24 text-sm">
+                <p className="text-justify h-24 text-sm mb-4">
                   {review.reviewContent}
                 </p>
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-10">
                   <ReactStars
                     size={34}
                     value={review.star}

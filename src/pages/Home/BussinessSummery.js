@@ -6,10 +6,10 @@ import { SiProtools } from "react-icons/si";
 
 const BussinessSummery = () => {
   return (
-    <section className="text-gray-600 body-font py-14">
+    <section className="text-gray-600 body-font py-8">
       <div className="container px-5 py-5 mx-auto bg-base-100 rounded-lg mt-8">
         <div className="flex flex-col text-center w-full mb-10">
-          <h1 className="sm:text-3xl text-3xl font-bold title-font mb-4 text-gray-900">
+          <h1 className="sm:text-3xl text-4xl font-bold title-font mb-4 text-gray-900">
             Here Is Our Bussiness Summery.
           </h1>
           <p className="lg:w-2/3 mx-auto text-md leading-relaxed">

@@ -19,9 +19,11 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth);
   const navigate = useNavigate();
   const location = useLocation();
+
   let from = location.state?.from?.pathname || "/";
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [token] = useToken(user);
+  
   if (error || updateError) {
     return (
       <div>
@@ -45,8 +47,8 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex justify-center">
-      <div className="shadow-xl p-8 rounded-lg mt-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 py-4">
+      <div className="p-8 rounded-lg mt-5">
         <h2 className="text-2xl text-center">Register</h2>
         <div className="flex justify-center pt-8">
           <form
@@ -92,7 +94,7 @@ const Register = () => {
             <input
               type="submit"
               value="Login"
-              className="border-2 rounded-lg px-4 py-2 block w-80 mt-5 bg-black text-white"
+              className="border-2 rounded-lg px-4 py-2 block w-80 mt-5 bg-primary text-white text-xl"
             />
           </form>
         </div>
@@ -107,6 +109,12 @@ const Register = () => {
         </div>
         <SocialLogin />
       </div>
+      <div className="md:flex justify-center items-center">
+      <img
+        src="https://i.ibb.co/554SxDK/undraw-Access-account-re-8spm.png"
+        alt=""
+      />
+    </div>
     </div>
   );
 };
