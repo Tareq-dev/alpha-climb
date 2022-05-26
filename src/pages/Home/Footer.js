@@ -6,12 +6,14 @@ const Footer = () => {
     <footer className="text-white body-font bg-gray-900">
       <div className="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-          <Link
-            to="/"
-            className="flex title-font font-medium items-center md:justify-start justify-center text-white"
-          >
-            <span className="ml-3 text-xl">Alpha Climb</span>
-          </Link>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <img
+          className="w-14"
+          src="https://i.ibb.co/ZJDHvN9/Capture-removebg-preview.png"
+          alt="logo"
+        />
+        <span className="font-serif text-info font-bold">Alpha Climb</span>
+      </Link>
           <p className="mt-2 text-md text-white">
             Transform Your Bike Life Easier
           </p>
