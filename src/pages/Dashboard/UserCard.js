@@ -4,9 +4,8 @@ import Swal from "sweetalert2";
 
 const UserCard = ({ user }) => {
   const { email, role } = user;
-  // const [allUser, setAllUser] = [];
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://intense-beyond-53965.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -47,7 +46,7 @@ const UserCard = ({ user }) => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`http://localhost:5000/user/${email}`, {
+          fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -93,7 +92,7 @@ const UserCard = ({ user }) => {
     //
     //         )}
     //       </div>
-    //       <div class="flex-initial w-32">
+    //       <div className="flex-initial w-32">
     //
     //       </div>
     //     </div>

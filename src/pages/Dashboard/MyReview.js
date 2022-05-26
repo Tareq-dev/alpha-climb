@@ -23,7 +23,7 @@ const MyReview = () => {
       star,
       reviewContent,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://intense-beyond-53965.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ const MyReview = () => {
             required
             name="review"
             style={{ width: "300px" }}
-            class="textarea border-gray-400 "
+            className="textarea border-gray-400 "
             placeholder="Give Us Review"
           ></textarea>
           <br />

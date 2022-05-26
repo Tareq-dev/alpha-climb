@@ -10,7 +10,7 @@ const Products = () => {
         Our Products
       </h2>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-        {products.slice(0, 6).map((product) => (
+        {products.slice(-6).map((product) => (
           <Product product={product} key={product._id} />
         ))}
       </div>

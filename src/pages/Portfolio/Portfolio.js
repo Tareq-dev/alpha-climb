@@ -106,13 +106,13 @@ const Portfolio = () => {
         </section>
         <section className="py-8">
           <h2 className="text-3xl font-bold text-center my-4">My Project</h2>
-          <div class="flex flex-col md:flex-row bg-base-100 shadow-xl p-2 rounded-xl">
+          <div className="flex flex-col md:flex-row bg-base-100 shadow-xl p-2 rounded-xl">
             <img
               className="md:w-48 w-full"
               src="https://i.ibb.co/ykPx303/pedu.png"
               alt="Pedal-prince"
             />
-            <div class="p-2">
+            <div className="p-2">
               <div className="">
                 <h3 className="text-xl font-bold">
                   Project Name :<span className="text-info"> Pedal Prince</span>{" "}
@@ -131,7 +131,7 @@ const Portfolio = () => {
               </div>
 
               <h3 className="text-xl font-bold">Technology : </h3>
-              <p class="">
+              <p className="">
                 React.js , Tailwind CSS , Firebase authentication,
                 Firebase,Node.js , MongoDB , Heroku.
               </p>
@@ -160,13 +160,13 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row bg-base-100 shadow-xl mt-5 p-2 rounded-xl">
+          <div className="flex flex-col md:flex-row bg-base-100 shadow-xl mt-5 p-2 rounded-xl">
             <img
               className="md:w-48 w-full"
               src="https://i.ibb.co/c8q59ZS/heaven.png"
               alt="Movie"
             />
-            <div class="p-2">
+            <div className="p-2">
               <div className="">
                 <h3 className="text-xl font-bold">
                   Project Name :<span className="text-info"> Heaven Show</span>{" "}
@@ -185,7 +185,7 @@ const Portfolio = () => {
               </div>
 
               <h3 className="text-xl font-bold">Technology : </h3>
-              <p class="">
+              <p className="">
                 React.js , Tailwind CSS ,Node.js , MongoDB , Heroku, Firebase
                 authentication, Firebase.
               </p>
@@ -212,13 +212,13 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row bg-base-100 shadow-xl mt-5 p-2 rounded-xl">
+          <div className="flex flex-col md:flex-row bg-base-100 shadow-xl mt-5 p-2 rounded-xl">
             <img
               className="md:w-48 w-full"
               src="https://i.ibb.co/Fg0cKrj/car.png"
               alt="Movie"
             />
-            <div class="p-2">
+            <div className="p-2">
               <div className="">
                 <h3 className="text-xl font-bold">
                   Project Name :<span className="text-info"> Car Repair</span>
@@ -237,7 +237,7 @@ const Portfolio = () => {
               </div>
 
               <h3 className="text-xl font-bold">Technology : </h3>
-              <p class="">
+              <p className="">
                 React.js project with Firebase authentication, Firebase,Node.js
                 , MongoDB , Heroku.
               </p>

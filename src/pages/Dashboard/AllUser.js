@@ -9,7 +9,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user", {
+    fetch("https://intense-beyond-53965.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -21,10 +21,10 @@ const AllUser = () => {
     return <Loading />;
   }
   return (
-    <div class="overflow-x-auto w-full">
+    <div className="overflow-x-auto w-full">
       <p className="text-center text-xl py-4">Total User : {users.length}</p>
 
-      <table class="table w-full">
+      <table className="table w-full">
         <thead>
           <tr>
             <th>Email</th>

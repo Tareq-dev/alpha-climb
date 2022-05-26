@@ -39,7 +39,7 @@ const Purchase = () => {
       phone,
       orderQuantity,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://intense-beyond-53965.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -52,14 +52,12 @@ const Purchase = () => {
           navigate(`/payment/${id}`);
         }
       });
-
-   
   };
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-14 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6">
           <div>
             <h2 className="text-md title-font text-gray-500 tracking-widest">
               User Name : {user?.displayName}
@@ -90,18 +88,18 @@ const Purchase = () => {
           <div className="flex justify-center">
             <img
               alt="ecommerce"
-              className="w-full lg:h-auto h-80 object-cover object-center rounded"
+              className="w-max lg:h-auto h-80 object-cover object-center rounded"
               src={product?.img}
             />
           </div>
         </div>
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center md:mt-12 ">
           <form
             onSubmit={handlePurchases}
-            className="flex-col w-1/2 justify-center items-center border-2 p-4"
+            className="flex-col w-full md:w-1/2 justify-center items-center border-2 p-4"
           >
             <div>
-              <label className="block px-3" htmlFor="">
+              <label className=" block px-3" htmlFor="">
                 Shop Name
               </label>
               <input

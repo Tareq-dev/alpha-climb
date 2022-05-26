@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
+import { useNavigate } from "react-router-dom";
 
 const MyOrder = () => {
   const [user] = useAuthState(auth);
   const email = user.email;
   const [order, setOrder] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    const url = `http://localhost:5000/orders/${email}`;
+    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -40,7 +42,7 @@ const MyOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`http://localhost:5000/orders/${id}`, {
+          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -65,13 +67,16 @@ const MyOrder = () => {
         }
       });
   };
+  const payment = (id) => {
+    navigate(`/payment/${id}`);
+  };
   return (
     <div>
       <h2 className="text-center text-2xl font-semibold mb-5">
         You Ordered : {order.length} times
       </h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>SL</th>
@@ -79,6 +84,7 @@ const MyOrder = () => {
               <th>O. Quantity</th>
               <th>Total Price</th>
               <th>Payment</th>
+              <th>Pay</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -94,6 +100,18 @@ const MyOrder = () => {
                     <span className="px-2 bg-green-300">Paid</span>
                   ) : (
                     <span className="px-2 bg-red-400">UnPaid</span>
+                  )}
+                </td>
+                <td>
+                  {o?.paid === false ? (
+                    <span></span>
+                  ) : (
+                    <button
+                      onClick={() => payment(o.productId)}
+                      className="px-2 bg-orange-300"
+                    >
+                      Please Pay
+                    </button>
                   )}
                 </td>
                 <td>

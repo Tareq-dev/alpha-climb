@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="navbar bg-black text-white">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabindex="0" className="btn btn-ghost lg:hidden">
+          <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -65,7 +65,7 @@ const Navbar = () => {
             {user && (
               <li className="px-5">
                 <NavLink className="h-8 mt-2" to="/dashboard">
-                  Dashboard
+                  My Profile
                 </NavLink>
               </li>
             )}
@@ -77,7 +77,6 @@ const Navbar = () => {
                   }
                   to="/dashboard/my-order"
                 >
-                  
                   My Order
                 </NavLink>
               </li>
@@ -90,7 +89,6 @@ const Navbar = () => {
                   }
                   to="/dashboard/my-review"
                 >
-                 
                   Add Review
                 </NavLink>
               </li>
@@ -127,7 +125,7 @@ const Navbar = () => {
                   }
                   to="/dashboard/manage-orders"
                 >
-                  Manage Orders
+                  Manage All Orders
                 </NavLink>
               </li>
             )}
@@ -152,7 +150,10 @@ const Navbar = () => {
               </button>
             ) : (
               <li className="px-5">
-                <NavLink className="h-8 mt-2 btn-outline btn-info" to="/login">
+                <NavLink
+                  className="h-8 mt-2 btn-outline font-bold btn-info"
+                  to="/login"
+                >
                   Login
                 </NavLink>
               </li>
@@ -197,8 +198,8 @@ const Navbar = () => {
               >
                 Sign Out
               </button>
-              <div class="avatar">
-                <div class="w-10 mx-2 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <div className="avatar">
+                <div className="w-10 mx-2 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src={user?.photoURL || profile.img} alt="" />
                 </div>
               </div>

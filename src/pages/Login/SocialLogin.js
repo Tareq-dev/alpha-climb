@@ -26,15 +26,10 @@ const SocialLogin = () => {
   }
   return (
     <div className="text-center">
-      <button
-        onClick={() => signInWithGoogle()}
-      >
-        <div class="">
-          <div class="w-8 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
-            <img
-              src="https://i.ibb.co/5k5bzzG/google.png"
-              alt=""
-            />
+      <button onClick={() => signInWithGoogle()}>
+        <div className="">
+          <div className="w-8 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+            <img src="https://i.ibb.co/5k5bzzG/google.png" alt="" />
           </div>
         </div>
       </button>

@@ -3,7 +3,7 @@ import React from "react";
 const Subscription = () => {
   return (
     <div className="py-4">
-      <div class="p-4 rounded-3xl w-full h-content bg-sky-300 shadow-xl flex justify-center items-center">
+      <div className="p-4 rounded-3xl w-full h-content bg-sky-300 shadow-xl flex justify-center items-center">
         <div>
           <div>
             <h2 className="text-center text-2xl py-2 font-bold">
@@ -17,28 +17,28 @@ const Subscription = () => {
               we've been working on and in general all good things Chromag!
             </p>
           </div>
-        <div className='flex justify-center'>
-        <div class="p-4 rounded-3xl w-54 md:w-96 bg-base-100 shadow-xl my-3">
-        <div class="card-body">
           <div className="flex justify-center">
-            <img
-              className="w-28"
-              src="https://i.ibb.co/VNLWQvr/Mail-box.png"
-              alt=""
-            />
+            <div className="p-4 rounded-3xl w-54 md:w-96 bg-base-100 shadow-xl my-3">
+              <div className="card-body">
+                <div className="flex justify-center">
+                  <img
+                    className="w-28"
+                    src="https://i.ibb.co/VNLWQvr/Mail-box.png"
+                    alt=""
+                  />
+                </div>
+                <p className="text-center">Subscribe to our newsletter</p>
+                <input
+                  type="text"
+                  placeholder="Your Email"
+                  className="input input-bordered w-full max-w-xs"
+                />
+                <div className="card-actions justify-center">
+                  <button className="btn bg-sky-300">Submit</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-center">Subscribe to our newsletter</p>
-          <input
-            type="text"
-            placeholder="Your Email"
-            class="input input-bordered w-full max-w-xs"
-          />
-          <div class="card-actions justify-center">
-            <button class="btn bg-sky-300">Submit</button>
-          </div>
-        </div>
-      </div>
-        </div>
         </div>
       </div>
     </div>

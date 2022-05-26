@@ -16,14 +16,14 @@ const Dashboard = () => {
     return <Loading />;
   }
   return (
-    <div class="drawer drawer-mobile">
-      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content py-5">
+    <div className="drawer drawer-mobile">
+      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content py-5">
         <Outlet></Outlet>
       </div>
-      <div class="drawer-side border-r-2">
-        <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu h-min md:my-24 p-2 overflow-y-auto w-56 bg-base-100 text-base-content">
+      <div className="drawer-side border-r-2">
+        <label for="my-drawer-2" className="drawer-overlay"></label>
+        <ul className="menu h-min md:my-24 p-2 overflow-y-auto w-56 bg-base-100 text-base-content">
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "active-link" : "link")}
@@ -103,7 +103,7 @@ const Dashboard = () => {
                 to="/dashboard/manage-orders"
               >
                 <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
-                Manage Orders
+                Manage All Orders
               </NavLink>
             </li>
           )}

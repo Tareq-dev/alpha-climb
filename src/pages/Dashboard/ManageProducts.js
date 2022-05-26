@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://intense-beyond-53965.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -30,7 +30,7 @@ const ManageProducts = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`http://localhost:5000/products/${id}`, {
+          fetch(`https://intense-beyond-53965.herokuapp.com/products/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -58,9 +58,9 @@ const ManageProducts = () => {
       });
   };
   return (
-    <div class="overflow-x-auto">
+    <div className="overflow-x-auto">
       <h2 className="text-2xl text-center py-2">Manage Products</h2>
-      <table class="table w-full">
+      <table className="table w-full">
         <thead>
           <tr>
             <th>Sl</th>

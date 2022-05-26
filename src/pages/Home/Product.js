@@ -8,11 +8,11 @@ const Product = ({ product }) => {
   };
   const { _id, name, img, description, price, availableQuantity } = product;
   return (
-    <div className="absulate bg-base-100 p-4 rounded-lg">
+    <div className="bg-base-100 p-2 rounded-lg h-max">
       <figure>
         <img src={img} alt="Shoes" />
       </figure>
-      <div className="card-body p-3">
+      <div className="card-body p-2">
         <h2 className="card-title">{name}</h2>
         <p>{description.slice(0, 100) + "...."}</p>
         <p className="bg-sky-100 py-1 px-2 rounded-xl font-bold">

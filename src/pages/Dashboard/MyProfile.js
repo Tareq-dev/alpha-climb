@@ -13,7 +13,7 @@ const MyProfile = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setProfile(data);
@@ -24,7 +24,7 @@ const MyProfile = () => {
   }
   const onSubmit = (data, event) => {
     const updatedData = data;
-    fetch(`http://localhost:5000/user/${email}`, {
+    fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -45,8 +45,8 @@ const MyProfile = () => {
     <div>
       <div className="mx-10 py-8">
         <div className="flex items-center w-full mb-3">
-          <div class="avatar online">
-            <div class="w-24 rounded-full shadow-2xl">
+          <div className="avatar online">
+            <div className="w-24 rounded-full shadow-2xl">
               <img src={profile.img || user.photoURL} alt={user.displayName} />
             </div>
           </div>
@@ -77,49 +77,49 @@ const MyProfile = () => {
             type="text"
             readOnly
             value={user?.email}
-            class="input input-bordered w-full input-xs max-w-xs  mt-4"
+            className="input input-bordered w-full input-xs max-w-xs  mt-4"
             {...register("email", { required: true })}
           />
           <br />
           <input
             type="text"
             placeholder="Name"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("name", { required: true })}
           />
           <br />
           <input
             type="text"
             placeholder="Address"
-            class="input input-bordered input-sm w-full max-w-xs mt-4"
+            className="input input-bordered input-sm w-full max-w-xs mt-4"
             {...register("address", { required: true })}
           />
           <br />
           <input
             type="text"
             placeholder="Phone Number"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("phone")}
           />
           <br />
           <input
             type="text"
             placeholder="Facebook URL"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("facebook")}
           />
           <br />
           <input
             type="text"
             placeholder="LinkedIn URL"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("linkedIn")}
           />
           <br />
           <input
             type="text"
             placeholder="Img URL"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("img")}
           />
           <br />

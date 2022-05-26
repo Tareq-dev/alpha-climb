@@ -8,7 +8,7 @@ const AddProducts = () => {
   const { register, handleSubmit } = useForm();
   const [user] = useAuthState(auth);
   const onSubmit = (data, event) => {
-    fetch("http://localhost:5000/products", {
+    fetch("https://intense-beyond-53965.herokuapp.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -35,35 +35,35 @@ const AddProducts = () => {
             type="text"
             readOnly
             value={user?.email}
-            class="input input-bordered w-full input-xs max-w-xs  mt-4"
+            className="input input-bordered w-full input-xs max-w-xs  mt-4"
             {...register("email", { required: true })}
           />
           <br />
           <input
             type="text"
             placeholder="Name"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("name", { required: true })}
           />
           <br />
           <input
             type="number"
             placeholder="Price Per Unit"
-            class="input input-bordered input-sm w-full max-w-xs mt-4"
+            className="input input-bordered input-sm w-full max-w-xs mt-4"
             {...register("price", { required: true })}
           />
           <br />
           <input
             type="number"
             placeholder="Available Quantity"
-            class="input input-bordered input-sm w-full max-w-xs mt-4"
+            className="input input-bordered input-sm w-full max-w-xs mt-4"
             {...register("availableQuantity", { required: true })}
           />
           <br />
           <textarea
             type="text"
             placeholder="Product Description"
-            class="input input-bordered input-sm w-full max-w-xs h-32  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs h-32  mt-4"
             {...register("description")}
           />
           <br />
@@ -71,7 +71,7 @@ const AddProducts = () => {
           <input
             type="text"
             placeholder="Img URL"
-            class="input input-bordered input-sm w-full max-w-xs  mt-4"
+            className="input input-bordered input-sm w-full max-w-xs  mt-4"
             {...register("img")}
           />
           <br />
