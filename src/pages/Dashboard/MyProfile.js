@@ -63,10 +63,17 @@ const MyProfile = () => {
         </div>
         <div className="mt-4 flex flex-row">
           <a target="_blank" rel="noreferrer" href={profile?.facebook}>
-            <FaFacebook size="25" className="text-blue-600 mx-5" />
+            <FaFacebook
+              size="40"
+              className="text-blue-600 mx-5 rounded-full ring ring-info ring-offset-base-100 ring-offset-2"
+            />
           </a>
           <a target="_blank" rel="noreferrer" href={profile?.linkedIn}>
-            <FaLinkedinIn size="25" className="text-blue-600" />
+            <FaLinkedinIn
+              size="40"
+              className="text-blue-600 mx-5 ring ring-info ring-offset-base-100 ring-offset-2"
+              p-2
+            />
           </a>
         </div>
       </div>

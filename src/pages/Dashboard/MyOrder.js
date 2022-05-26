@@ -103,7 +103,7 @@ const MyOrder = () => {
                 </td>
                 <td>
                   {o?.paid === true ? (
-                    <span></span>
+                    <span className="block bg-pink-300 px-2">TnxId : {o.transactionId.slice(0,10)}</span>
                   ) : (
                     <button
                       disabled={o.paid}

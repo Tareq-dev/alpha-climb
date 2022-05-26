@@ -161,7 +161,12 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Alpha Climb
+          <img
+            className="w-14"
+            src="https://i.ibb.co/ZJDHvN9/Capture-removebg-preview.png"
+            alt="logo"
+          />
+          <span className="font-serif text-info font-bold">Alpha Climb</span>
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex mx-2">
