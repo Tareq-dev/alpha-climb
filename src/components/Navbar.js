@@ -171,25 +171,25 @@ const Navbar = () => {
       <div className="navbar-end hidden lg:flex mx-2">
         <ul className="menu menu-horizontal">
           <li>
-            <NavLink className="h-8 mt-2" to="/products">
+            <NavLink className="h-8 mt-2 rounded-lg" to="/products">
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink className="h-8 mt-2" to="/blog">
+            <NavLink className="h-8 mt-2 rounded-lg" to="/blog">
               Blog
             </NavLink>
           </li>
           {user && (
             <li>
-              <NavLink className="h-8 mt-2" to="/portfolio">
+              <NavLink className="h-8 mt-2 rounded-lg" to="/portfolio">
                 Portfolio
               </NavLink>
             </li>
           )}
           {user && (
             <li>
-              <NavLink className="h-8 mt-2 mx-2" to="/dashboard">
+              <NavLink className="h-8 mt-2 mx-2 rounded-lg" to="/dashboard">
                 Dashboard
               </NavLink>
             </li>

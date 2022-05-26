@@ -22,6 +22,7 @@ import NotFound from "./components/NotFound";
 import Blog from "./pages/Blog/Blog";
 import RequireAdmin from "./pages/Login/RequireAdmin";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import ResetPassword from "./components/ResetPassword";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/reset" element={<ResetPassword />}></Route>
         <Route
           path="/payment/:id"
           element={
