@@ -23,13 +23,9 @@ const Register = () => {
   let from = location.state?.from?.pathname || "/";
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [token] = useToken(user);
-  
+
   if (error || updateError) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
+    toast.error(error.message);
   }
   if (loading || updating) {
     return <Loading />;
@@ -110,11 +106,11 @@ const Register = () => {
         <SocialLogin />
       </div>
       <div className="md:flex justify-center items-center">
-      <img
-        src="https://i.ibb.co/554SxDK/undraw-Access-account-re-8spm.png"
-        alt=""
-      />
-    </div>
+        <img
+          src="https://i.ibb.co/554SxDK/undraw-Access-account-re-8spm.png"
+          alt=""
+        />
+      </div>
     </div>
   );
 };

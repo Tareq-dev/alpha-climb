@@ -17,7 +17,7 @@ const Payment = () => {
   const navigate = useNavigate();
   const email = user?.email;
   useEffect(() => {
-    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}/${id}`;
+    const url = `http://localhost:5000/orders/${email}/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -49,8 +49,8 @@ const Payment = () => {
                   <p className="text-center">$ {order.price}</p>
                 </div>
                 <div className="bg-sky-300 text-black text-center px-5 py-3 mb-2 rounded-lg">
-                  <button className="text-md bg-orange-400 rounded-lg text-center">
-                    <Link to="/dashboard/my-order"> Go to My Order Page</Link>
+                  <button className="text-md bg-orange-400 px-2 rounded-lg text-center">
+                    <Link to="/dashboard/my-order">See your Order</Link>
                   </button>
                 </div>
               </div>

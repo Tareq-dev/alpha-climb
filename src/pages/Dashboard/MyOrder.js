@@ -10,7 +10,7 @@ const MyOrder = () => {
   const [order, setOrder] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}`;
+    const url = `http://localhost:5000/orders/${email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -21,7 +21,6 @@ const MyOrder = () => {
         setOrder(data);
       });
   }, [email]);
-
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -42,7 +41,7 @@ const MyOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
+          fetch(`http://localhost:5000/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -103,10 +102,11 @@ const MyOrder = () => {
                   )}
                 </td>
                 <td>
-                  {o?.paid === false ? (
+                  {o?.paid === true ? (
                     <span></span>
                   ) : (
                     <button
+                      disabled={o.paid}
                       onClick={() => payment(o.productId)}
                       className="px-2 bg-orange-300"
                     >

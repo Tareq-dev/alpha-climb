@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import "./Dashboard.css";
 import useAdmin from "../../Hooks/useAdmin";
+import { faAdd, faBook, faBookReader,  faUserShield } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
   const [user, loading] = useAuthState(auth);
@@ -76,7 +77,7 @@ const Dashboard = () => {
                 }
                 to="/dashboard/add-product"
               >
-                <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
+                <FontAwesomeIcon className="text-xl text-black" icon={faAdd} />
                 Add Products
               </NavLink>
             </li>
@@ -89,7 +90,7 @@ const Dashboard = () => {
                 }
                 to="/dashboard/manage-products"
               >
-                <FontAwesomeIcon className="text-xltext-black" icon={faStar} />
+                <FontAwesomeIcon className="text-xltext-black" icon={faBook} />
                 Manage Products
               </NavLink>
             </li>
@@ -102,7 +103,7 @@ const Dashboard = () => {
                 }
                 to="/dashboard/manage-orders"
               >
-                <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
+                <FontAwesomeIcon className="text-xl text-black" icon={faBookReader} />
                 Manage All Orders
               </NavLink>
             </li>
@@ -115,7 +116,7 @@ const Dashboard = () => {
                 }
                 to="/dashboard/users"
               >
-                <FontAwesomeIcon className="text-xl text-black" icon={faStar} />
+                <FontAwesomeIcon className="text-xl text-black" icon={faUserShield} />
                 Users
               </NavLink>
             </li>

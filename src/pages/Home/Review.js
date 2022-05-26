@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://intense-beyond-53965.herokuapp.com/reviews")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -29,7 +29,7 @@ const Review = () => {
                   src={review.img}
                 />
                 <p className="text-justify h-24 text-sm mb-4">
-                  {review.reviewContent.slice(0,150)}
+                  {review.reviewContent.slice(0, 150)}
                 </p>
                 <div className="flex justify-center mt-10">
                   <ReactStars

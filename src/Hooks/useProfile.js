@@ -9,7 +9,7 @@ const useProfile = () => {
 
   const email = user?.email;
   useEffect(() => {
-    fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`, {
+    fetch(`http://localhost:5000/user/${email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

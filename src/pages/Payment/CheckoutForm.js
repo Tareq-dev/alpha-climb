@@ -15,16 +15,13 @@ const CheckoutForm = ({ order }) => {
   const { price, name, email } = order;
   useEffect(() => {
     if (price) {
-      fetch(
-        "https://intense-beyond-53965.herokuapp.com/create-payment-intent",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ price }),
-        }
-      )
+      fetch("http://localhost:5000/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data?.clientSecret) {
@@ -81,8 +78,8 @@ const CheckoutForm = ({ order }) => {
         paymentId: id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://intense-beyond-53965.herokuapp.com/order/${id}`, {
-        method: "PATCH",
+      fetch(`http://localhost:5000/order/${email}/${id}`, {
+        method: "PUT",
         headers: {
           "content-type": "application/json",
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -90,9 +87,7 @@ const CheckoutForm = ({ order }) => {
         body: JSON.stringify(payment),
       })
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
+        .then((data) => {});
     }
   };
 
