@@ -27,7 +27,7 @@ const ManageOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`http://localhost:5000/orders/${id}`, {
+          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -62,13 +62,16 @@ const ManageOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`http://localhost:5000/admin/order/${id}`, {
-            method: "PATCH",
-            headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-            },
-          })
+          fetch(
+            `https://intense-beyond-53965.herokuapp.com/admin/order/${id}`,
+            {
+              method: "PATCH",
+              headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              },
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.modifiedCount) {

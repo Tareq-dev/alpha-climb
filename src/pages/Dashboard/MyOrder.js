@@ -10,7 +10,7 @@ const MyOrder = () => {
   const [order, setOrder] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = `http://localhost:5000/orders/${email}`;
+    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -41,7 +41,7 @@ const MyOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`http://localhost:5000/orders/${id}`, {
+          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -103,7 +103,9 @@ const MyOrder = () => {
                 </td>
                 <td>
                   {o?.paid === true ? (
-                    <span className="block bg-pink-300 px-2">TnxId : {o.transactionId.slice(0,10)}</span>
+                    <span className="block bg-pink-300 px-2">
+                      TnxId : {o.transactionId.slice(0, 10)}
+                    </span>
                   ) : (
                     <button
                       disabled={o.paid}

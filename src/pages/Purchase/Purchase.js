@@ -39,7 +39,7 @@ const Purchase = () => {
       phone,
       orderQuantity,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://intense-beyond-53965.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
