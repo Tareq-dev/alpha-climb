@@ -8,13 +8,12 @@ import Loading from "./Loading";
 import useAdmin from "../Hooks/useAdmin";
 
 const Navbar = () => {
-  const [user] = useAuthState(auth);
+  const [user, isLoading] = useAuthState(auth);
   const [admin] = useAdmin(user);
 
-  const [profile, loadUser] = useProfile([]);
+  const [profile] = useProfile([]);
 
-  // console.log(profile);
-  if (loadUser) {
+  if (isLoading) {
     return <Loading />;
   }
   const logOut = () => {

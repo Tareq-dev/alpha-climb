@@ -1,6 +1,7 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Loading from "../../components/Loading";
 import auth from "../../firebase.init";
 import useToken from "../../Hooks/useToken";
@@ -12,11 +13,7 @@ const SocialLogin = () => {
   const [token] = useToken(user);
   let from = location.state?.from?.pathname || "/";
   if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
+   toast.error(error.message)
   }
   if (loading) {
     return <Loading />;
