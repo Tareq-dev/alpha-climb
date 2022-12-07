@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://intense-beyond-53965.herokuapp.com/reviews")
+    fetch("https://alpha-climb-server.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

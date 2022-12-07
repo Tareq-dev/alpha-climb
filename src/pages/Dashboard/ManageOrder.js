@@ -27,11 +27,11 @@ const ManageOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
+          fetch(`https://alpha-climb-server.onrender.com/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
-            .then((data) => {});
+            .then((data) => { });
           swalWithBootstrapButtons.fire(
             "Deleted!",
             "Your file has been deleted.",
@@ -63,7 +63,7 @@ const ManageOrder = () => {
       .then((data) => {
         if (data.isConfirmed) {
           fetch(
-            `https://intense-beyond-53965.herokuapp.com/admin/order/${id}`,
+            `https://alpha-climb-server.onrender.com/admin/order/${id}`,
             {
               method: "PATCH",
               headers: {

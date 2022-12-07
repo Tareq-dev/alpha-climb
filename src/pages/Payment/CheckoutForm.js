@@ -16,7 +16,7 @@ const CheckoutForm = ({ order }) => {
   useEffect(() => {
     if (price) {
       fetch(
-        "https://intense-beyond-53965.herokuapp.com/create-payment-intent",
+        "https://alpha-climb-server.onrender.com/create-payment-intent",
         {
           method: "POST",
           headers: {
@@ -27,6 +27,7 @@ const CheckoutForm = ({ order }) => {
       )
         .then((res) => res.json())
         .then((data) => {
+
           if (data?.clientSecret) {
             setClientSecret(data.clientSecret);
           }
@@ -81,7 +82,7 @@ const CheckoutForm = ({ order }) => {
         paymentId: id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://intense-beyond-53965.herokuapp.com/order/${email}/${id}`, {
+      fetch(`https://alpha-climb-server.onrender.com/order/${email}/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -90,7 +91,7 @@ const CheckoutForm = ({ order }) => {
         body: JSON.stringify(payment),
       })
         .then((res) => res.json())
-        .then((data) => {});
+        .then((data) => { });
     }
   };
 
@@ -119,7 +120,7 @@ const CheckoutForm = ({ order }) => {
         <button
           className="btn btn-sm mt-6"
           type="submit"
-          disabled={!stripe || !clientSecret || paymentSuccess}
+          disabled={!stripe || clientSecret || paymentSuccess}
         >
           Pay
         </button>

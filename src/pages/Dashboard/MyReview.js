@@ -23,7 +23,7 @@ const MyReview = () => {
       star,
       reviewContent,
     };
-    fetch("https://intense-beyond-53965.herokuapp.com/reviews", {
+    fetch("https://alpha-climb-server.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

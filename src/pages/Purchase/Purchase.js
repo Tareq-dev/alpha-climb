@@ -39,7 +39,7 @@ const Purchase = () => {
       phone,
       orderQuantity,
     };
-    fetch("https://intense-beyond-53965.herokuapp.com/orders", {
+    fetch("https://alpha-climb-server.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

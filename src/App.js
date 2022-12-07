@@ -21,7 +21,7 @@ import MyProfile from "./pages/Dashboard/MyProfile";
 import NotFound from "./components/NotFound";
 import Blog from "./pages/Blog/Blog";
 import RequireAdmin from "./pages/Login/RequireAdmin";
-import Portfolio from "./pages/Portfolio/Portfolio";
+// import Portfolio from "./pages/Portfolio/Portfolio";
 import ResetPassword from "./components/ResetPassword";
 
 function App() {
@@ -52,14 +52,14 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route
+        {/* <Route
           path="/portfolio"
           element={
             <RequireAuth>
               <Portfolio />
             </RequireAuth>
           }
-        ></Route>
+        ></Route> */}
         <Route path="/dashboard" element={<RequireAuth> <Dashboard /></RequireAuth>}>
           <Route
             index

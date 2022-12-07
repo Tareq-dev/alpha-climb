@@ -33,15 +33,15 @@ const Navbar = () => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
           </label>
           <ul
-            tabindex="0"
+            tabIndex="0"
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
           >
             <li className="px-5">
@@ -54,13 +54,13 @@ const Navbar = () => {
                 Blog
               </NavLink>
             </li>
-            {user && (
+            {/* {user && (
               <li className="px-5">
                 <NavLink className="h-8 mt-2" to="/portfolio">
                   Portfolio
                 </NavLink>
               </li>
-            )}
+            )} */}
             {user && (
               <li className="px-5">
                 <NavLink className="h-8 mt-2" to="/dashboard">
@@ -180,13 +180,7 @@ const Navbar = () => {
               Blog
             </NavLink>
           </li>
-          {user && (
-            <li>
-              <NavLink className="h-8 mt-2 rounded-lg" to="/portfolio">
-                Portfolio
-              </NavLink>
-            </li>
-          )}
+
           {user && (
             <li>
               <NavLink className="h-8 mt-2 mx-2 rounded-lg" to="/dashboard">

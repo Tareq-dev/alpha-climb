@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const UserCard = ({ user }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`https://intense-beyond-53965.herokuapp.com/user/admin/${email}`, {
+    fetch(`https://alpha-climb-server.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -46,11 +46,11 @@ const UserCard = ({ user }) => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`, {
+          fetch(`https://alpha-climb-server.onrender.com/user/${email}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
-            .then((data) => {});
+            .then((data) => { });
           swalWithBootstrapButtons.fire(
             "Deleted!",
             "Your file has been deleted.",

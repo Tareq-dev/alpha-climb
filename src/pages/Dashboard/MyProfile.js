@@ -13,7 +13,7 @@ const MyProfile = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`)
+    fetch(`https://alpha-climb-server.onrender.com/user/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setProfile(data);
@@ -24,7 +24,7 @@ const MyProfile = () => {
   }
   const onSubmit = (data, event) => {
     const updatedData = data;
-    fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`, {
+    fetch(`https://alpha-climb-server.onrender.com/user/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

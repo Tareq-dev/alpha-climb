@@ -6,14 +6,14 @@ const Footer = () => {
     <footer className="text-white body-font bg-gray-900">
       <div className="container px-5 md:py-5  mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-        <img
-          className="w-14"
-          src="https://i.ibb.co/ZJDHvN9/Capture-removebg-preview.png"
-          alt="logo"
-        />
-        <span className="font-serif text-info font-bold">Alpha Climb</span>
-      </Link>
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
+            <img
+              className="w-14"
+              src="https://i.ibb.co/ZJDHvN9/Capture-removebg-preview.png"
+              alt="logo"
+            />
+            <span className="font-serif text-info font-bold">Alpha Climb</span>
+          </Link>
           <p className="mt-2 text-md text-white">
             Transform Your Bike Life Easier
           </p>
@@ -58,9 +58,9 @@ const Footer = () => {
             <Link to="/" className="text-gray-500">
               <svg
                 fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
               >
@@ -70,9 +70,9 @@ const Footer = () => {
             <Link to="/" className="ml-3 text-gray-500">
               <svg
                 fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
               >
@@ -83,9 +83,9 @@ const Footer = () => {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
               >
@@ -97,9 +97,9 @@ const Footer = () => {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="0"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="0"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
               >

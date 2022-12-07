@@ -10,7 +10,7 @@ const MyOrder = () => {
   const [order, setOrder] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = `https://intense-beyond-53965.herokuapp.com/orders/${email}`;
+    const url = `https://alpha-climb-server.onrender.com/orders/${email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -41,7 +41,7 @@ const MyOrder = () => {
 
       .then((data) => {
         if (data.isConfirmed) {
-          fetch(`https://intense-beyond-53965.herokuapp.com/orders/${id}`, {
+          fetch(`https://alpha-climb-server.onrender.com/orders/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

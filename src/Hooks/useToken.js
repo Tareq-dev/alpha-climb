@@ -5,7 +5,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
     const existingUser = { email: email };
     if (email) {
-      fetch(`https://intense-beyond-53965.herokuapp.com/user/${email}`, {
+      fetch(`https://alpha-climb-server.onrender.com/user/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

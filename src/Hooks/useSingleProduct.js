@@ -4,7 +4,7 @@ const useSingleProduct = (id) => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const url = `https://intense-beyond-53965.herokuapp.com/products/${id}`;
+    const url = `https://alpha-climb-server.onrender.com/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

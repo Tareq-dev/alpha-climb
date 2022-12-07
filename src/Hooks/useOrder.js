@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("https://intense-beyond-53965.herokuapp.com/orders", {
+    fetch("https://alpha-climb-server.onrender.com/orders", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

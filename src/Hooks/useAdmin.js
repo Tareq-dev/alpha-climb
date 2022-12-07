@@ -5,7 +5,7 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`https://intense-beyond-53965.herokuapp.com/admin/${email}`, {
+      fetch(`https://alpha-climb-server.onrender.com/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
