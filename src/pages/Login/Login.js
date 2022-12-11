@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "./../../firebase.init";
 import SocialLogin from "./SocialLogin";
 import Loading from "./../../components/Loading";
-import useToken from "../../Hooks/useToken";
+// import useToken from "../../Hooks/useToken";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -15,14 +15,13 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  const [token] = useToken(user);
   if (error) {
     toast.error(error.message);
   }
   if (loading) {
     return <Loading />;
   }
-  if (token) {
+  if (user) {
     navigate(from, { replace: true });
   }
   return (

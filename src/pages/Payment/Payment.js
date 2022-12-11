@@ -33,8 +33,8 @@ const Payment = () => {
   return (
     <div>
       {orders.slice(-1).map((order) => (
-        <div className="my-8 mx-4 md:mx-auto md:w-3/4">
-          <div o={order} key={order._id}>
+        <div o={order} key={order._id} className="my-8 mx-4 md:mx-auto md:w-3/4">
+          <div>
             <div className="md:w-full h-full justify-center items-center bg-black text-white py-8 rounded-t-3xl">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-5 items-center p-5">
                 <div onClick={backBtn} className="flex justify-center mb-5">

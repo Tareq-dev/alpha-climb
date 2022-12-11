@@ -10,9 +10,9 @@ const Product = ({ product }) => {
   return (
     <div className="bg-base-100 p-2 rounded-lg h-max">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img className="w-[400px] h-[277px]" src={img} alt="Shoes" />
       </figure>
-      <div className="card-body p-2">
+      <div className="card-body p-2 md:h-[306px]">
         <h2 className="card-title">{name}</h2>
         <p>{description.slice(0, 100) + "...."}</p>
         <p className="bg-sky-100 py-1 px-2 rounded-xl font-bold">

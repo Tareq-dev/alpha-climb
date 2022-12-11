@@ -7,10 +7,11 @@ import useProfile from "./../Hooks/useProfile";
 import Loading from "./Loading";
 import useAdmin from "../Hooks/useAdmin";
 
+
+
 const Navbar = () => {
   const [user, isLoading] = useAuthState(auth);
   const [admin] = useAdmin(user);
-
   const [profile] = useProfile([]);
 
   if (isLoading) {

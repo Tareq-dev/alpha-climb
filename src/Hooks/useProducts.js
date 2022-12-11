@@ -8,7 +8,7 @@ const useProducts = () => {
       .then((data) => {
         setProducts(data);
       });
-  }, [products]);
+  }, [products._id]);
   return [products];
 };
 export default useProducts;

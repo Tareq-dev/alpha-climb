@@ -13,6 +13,9 @@ const CheckoutForm = ({ order }) => {
   const [transactionId, setTransactionId] = useState("");
 
   const { price, name, email } = order;
+
+
+
   useEffect(() => {
     if (price) {
       fetch(
@@ -27,7 +30,6 @@ const CheckoutForm = ({ order }) => {
       )
         .then((res) => res.json())
         .then((data) => {
-
           if (data?.clientSecret) {
             setClientSecret(data.clientSecret);
           }
@@ -120,7 +122,7 @@ const CheckoutForm = ({ order }) => {
         <button
           className="btn btn-sm mt-6"
           type="submit"
-          disabled={!stripe || clientSecret || paymentSuccess}
+        //  disabled={!stripe || clientSecret}
         >
           Pay
         </button>

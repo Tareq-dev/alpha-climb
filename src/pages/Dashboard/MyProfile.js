@@ -72,7 +72,7 @@ const MyProfile = () => {
             <FaLinkedinIn
               size="40"
               className="text-blue-600 mx-5 ring ring-info ring-offset-base-100 ring-offset-2"
-              p-2
+
             />
           </a>
         </div>

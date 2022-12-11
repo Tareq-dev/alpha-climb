@@ -11,6 +11,7 @@ const useProfile = () => {
   useEffect(() => {
     fetch(`https://alpha-climb-server.onrender.com/user/${email}`, {
       headers: {
+        "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
@@ -20,6 +21,6 @@ const useProfile = () => {
         setLoadUser(false);
       });
   }, [email]);
-  return [profile];
+  return [profile, loadUser];
 };
 export default useProfile;
