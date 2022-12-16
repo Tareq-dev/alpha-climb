@@ -8,7 +8,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import Loading from "../../components/Loading";
 import { toast } from "react-toastify";
-import useToken from "./../../Hooks/useToken";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +21,6 @@ const Register = () => {
 
   let from = location.state?.from?.pathname || "/";
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  const [token] = useToken(user);
 
   if (error || updateError) {
     toast.error(error.message);
@@ -30,7 +28,7 @@ const Register = () => {
   if (loading || updating) {
     return <Loading />;
   }
-  if (token) {
+  if (user) {
     navigate(from, { replace: true });
   }
   const handleCreateUser = async (event) => {

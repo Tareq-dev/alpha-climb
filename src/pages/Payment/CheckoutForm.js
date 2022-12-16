@@ -2,7 +2,6 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-// import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 const CheckoutForm = ({ order }) => {
   const { id } = useParams();
   const stripe = useStripe();
@@ -31,7 +30,7 @@ const CheckoutForm = ({ order }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data?.clientSecret) {
-            setClientSecret(data.clientSecret);
+            setClientSecret(data?.clientSecret);
           }
         });
     }
@@ -129,10 +128,10 @@ const CheckoutForm = ({ order }) => {
       </form>
 
       {paymentSuccess && (
-        <div className="text-green-700">
-          <p>
+        <div className="text-center font-bold">
+          <p className="py-4">
             Your transaction ID :
-            <span className="text-xl py-1 font-bold"> {transactionId}</span>{" "}
+            <p className="text-xl py-1  text-green-700 bg-white"> {transactionId}</p>{" "}
           </p>
         </div>
       )}

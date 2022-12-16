@@ -10,14 +10,14 @@ const Product = ({ product }) => {
   return (
     <div className="bg-base-100 p-2 rounded-lg h-max">
       <figure>
-        <img className="w-[400px] h-[277px]" src={img} alt="Shoes" />
+        <img className="w-[350px] h-[250px]" src={img} alt="Shoes" />
       </figure>
-      <div className="card-body p-2 md:h-[306px]">
+      <div className="card-body md:h-[306px]">
         <h2 className="card-title">{name}</h2>
-        <p>{description.slice(0, 100) + "...."}</p>
-        <p className="bg-sky-100 py-1 px-2 rounded-xl font-bold">
+        <span className="px-2 py-1">{description.slice(0, 100) + "...."}</span>
+        <span className="bg-sky-100 py-1 px-2 rounded-xl font-bold">
           Price : ${price}
-        </p>
+        </span>
         <span className="bg-sky-100 py-1 px-2 rounded-xl">
           Available: {availableQuantity} Pcs
         </span>

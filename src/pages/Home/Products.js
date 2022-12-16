@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Products = () => {
   const [products] = useProducts([]);
   return (
-    <div className="px-3 bg-sky-100 py-7">
+    <div className="md:px-28 px-4 bg-sky-100 py-7">
       <h2 className="text-3xl text-center py-5 font-bold">
         Our Products
       </h2>

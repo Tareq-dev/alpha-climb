@@ -4,19 +4,19 @@ import { Link, NavLink } from "react-router-dom";
 import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
 import useProfile from "./../Hooks/useProfile";
-import Loading from "./Loading";
 import useAdmin from "../Hooks/useAdmin";
 
 
 
 const Navbar = () => {
-  const [user, isLoading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   const [profile] = useProfile([]);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  // , isLoading 
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
   const logOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
