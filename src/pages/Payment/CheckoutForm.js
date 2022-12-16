@@ -13,27 +13,23 @@ const CheckoutForm = ({ order }) => {
 
   const { price, name, email } = order;
 
-
-
   useEffect(() => {
-    if (price) {
-      fetch(
-        "https://alpha-climb-server.onrender.com/create-payment-intent",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ price }),
+    fetch(
+      "https://alpha-climb-server.onrender.com/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.clientSecret) {
+          setClientSecret(data?.clientSecret);
         }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.clientSecret) {
-            setClientSecret(data?.clientSecret);
-          }
-        });
-    }
+      });
   }, [price]);
   const handlePaymentSubmit = async (event) => {
     event.preventDefault();
@@ -48,7 +44,7 @@ const CheckoutForm = ({ order }) => {
 
     const { error } = await stripe.createPaymentMethod({
       type: "card",
-      card,
+      card: elements.getElement(CardElement)
     });
     setPaymentError(error?.message);
     setPaymentSuccess("");
@@ -129,10 +125,10 @@ const CheckoutForm = ({ order }) => {
 
       {paymentSuccess && (
         <div className="text-center font-bold">
-          <p className="py-4">
+          <b className="py-4">
             Your transaction ID :
             <p className="text-xl py-1  text-green-700 bg-white"> {transactionId}</p>{" "}
-          </p>
+          </b>
         </div>
       )}
     </div>
