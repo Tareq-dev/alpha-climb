@@ -8,7 +8,7 @@ import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const stripePromise = loadStripe(
-  "pk_test_51L2G4sBmhlq91OcmM28zWFxrGlcdSXj1zS8BeHVC6Wmb7hnNORKQ7MhJyVY6nDQCua0L1bhsFX3w2xB6lnp1iTGe00CFqEoh15"
+  "pk_test_51L2G4sBmhlq91OcmM2QOya5XLmEQh8eyoFWymoxDlnpenrLYssxHwuAoDWjQ3aKFFAoFJ9wy4QTFSVKcvuZkXA1F00t7tniwdA"
 );
 const Payment = () => {
   const [orders, setOrders] = useState([]);
@@ -33,7 +33,11 @@ const Payment = () => {
   return (
     <div>
       {orders.slice(-1).map((order) => (
-        <div o={order} key={order._id} className="my-8 mx-4 md:mx-auto md:w-3/4">
+        <div
+          o={order}
+          key={order._id}
+          className="my-8 mx-4 md:mx-auto md:w-3/4"
+        >
           <div>
             <div className="md:w-full h-full justify-center items-center bg-black text-white py-8 rounded-t-3xl">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-5 items-center p-5">

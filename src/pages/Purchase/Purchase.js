@@ -57,14 +57,16 @@ const Purchase = () => {
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-14 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center md:gap-6">
           <div>
-            <h2 className="text-md title-font text-gray-500 tracking-widest">
+           <div>
+           {/* <h2 className="text-md title-font text-gray-500 tracking-widest">
               User Name : {user?.displayName}
             </h2>
             <h2 className="text-md title-font text-gray-500 mb-3 tracking-widest">
               User Email : {user?.email}
-            </h2>
+            </h2> */}
+           </div>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
               {product.name}
             </h1>
@@ -85,15 +87,15 @@ const Purchase = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center">
             <img
               alt="ecommerce"
-              className="w-max lg:h-auto h-80 object-cover object-center rounded"
+              className="lg:h-auto p-8 md:p-20 h-80 md:object-cover object-center rounded"
               src={product?.img}
             />
           </div>
         </div>
-        <div className="flex justify-center md:mt-12 ">
+        <div className="flex justify-center items-center md:mt-12 ">
           <form
             onSubmit={handlePurchases}
             className="flex-col w-full md:w-1/2 justify-center items-center border-2 p-4"
@@ -138,6 +140,7 @@ const Purchase = () => {
                 type="number"
                 name="order"
                 min="0"
+                required
                 placeholder="50"
                 className="border-2 mx-3 h-10 p-2 rounded w-3/4"
               />

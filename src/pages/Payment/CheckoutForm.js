@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+
 const CheckoutForm = ({ order }) => {
   const { id } = useParams();
   const stripe = useStripe();
@@ -14,23 +15,22 @@ const CheckoutForm = ({ order }) => {
   const { price, name, email } = order;
 
   useEffect(() => {
-    fetch(
-      "https://alpha-climb-server.onrender.com/create-payment-intent",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ price }),
-      }
-    )
+    fetch("https://alpha-climb-server.onrender.com/create-payment-intent", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ price }),
+    })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data?.clientSecret) {
           setClientSecret(data?.clientSecret);
         }
       });
   }, [price]);
+
   const handlePaymentSubmit = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) {
@@ -44,10 +44,11 @@ const CheckoutForm = ({ order }) => {
 
     const { error } = await stripe.createPaymentMethod({
       type: "card",
-      card: elements.getElement(CardElement)
+      card: elements.getElement(CardElement),
     });
     setPaymentError(error?.message);
     setPaymentSuccess("");
+
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -58,6 +59,7 @@ const CheckoutForm = ({ order }) => {
           },
         },
       });
+
     if (intentError || paymentError) {
       Swal.fire({
         icon: "error",
@@ -79,6 +81,7 @@ const CheckoutForm = ({ order }) => {
         paymentId: id,
         transactionId: paymentIntent.id,
       };
+
       fetch(`https://alpha-climb-server.onrender.com/order/${email}/${id}`, {
         method: "PUT",
         headers: {
@@ -88,7 +91,7 @@ const CheckoutForm = ({ order }) => {
         body: JSON.stringify(payment),
       })
         .then((res) => res.json())
-        .then((data) => { });
+        .then((data) => {});
     }
   };
 
@@ -117,7 +120,7 @@ const CheckoutForm = ({ order }) => {
         <button
           className="btn btn-sm mt-6"
           type="submit"
-        //  disabled={!stripe || clientSecret}
+          //  disabled={!stripe || clientSecret}
         >
           Pay
         </button>
@@ -127,7 +130,10 @@ const CheckoutForm = ({ order }) => {
         <div className="text-center font-bold">
           <b className="py-4">
             Your transaction ID :
-            <p className="text-xl py-1  text-green-700 bg-white"> {transactionId}</p>{" "}
+            <p className="text-xl py-1  text-green-700 bg-white">
+              {" "}
+              {transactionId}
+            </p>{" "}
           </b>
         </div>
       )}

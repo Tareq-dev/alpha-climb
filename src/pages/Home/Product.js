@@ -9,12 +9,12 @@ const Product = ({ product }) => {
   const { _id, name, img, description, price, availableQuantity } = product;
   return (
     <div className="bg-base-100 p-2 rounded-lg h-max">
-      <figure>
-        <img className="w-[350px] h-[250px]" src={img} alt="Shoes" />
-      </figure>
-      <div className="card-body md:h-[306px]">
-        <h2 className="card-title">{name}</h2>
-        <span className="px-2 py-1">{description.slice(0, 100) + "...."}</span>
+      <div className="flex justify-center items-center">
+      <img className="w-[200px] h-[150px] object-contain" src={img} alt="pd" />
+      </div>
+      <div className="card-body pb-2">
+        <h2 className="text-xl font-bold">{name}</h2>
+        {/* <span className="px-2 py-1">{description.slice(0, 100) + "...."}</span> */}
         <span className="bg-sky-100 py-1 px-2 rounded-xl font-bold">
           Price : ${price}
         </span>

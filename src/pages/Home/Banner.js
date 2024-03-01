@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="max-h-full">
       <img
-        className="lg:w-screen"
+        className="lg:w-screen md:h-[500px] object-fill rounded-md"
         src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mff-roka-0618-1-preview-maxwidth-3000-maxheight-3000-ppi-300-quality-90-1620433208.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=1600:*"
         alt=""
       />
